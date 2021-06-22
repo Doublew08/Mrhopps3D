@@ -1,0 +1,48 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class bedending : MonoBehaviour
+    
+{
+    public GameObject end1;
+    public bool bedendcan = false;
+    public GameObject endingscreen1;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        PlayerMovement playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        if (bedendcan&&end1)
+        {
+            end1.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                playerMovement.canmove = false;
+                endingscreen1.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Application.Quit();
+                }
+            }
+        }
+        else
+        {
+            end1.SetActive(false);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        bedendcan = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        bedendcan = false;
+    }
+}
