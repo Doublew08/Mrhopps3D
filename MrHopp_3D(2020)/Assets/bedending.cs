@@ -18,7 +18,11 @@ public class bedending : MonoBehaviour
     void Update()
     {
         PlayerMovement playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        if(GameObject.FindGameObjectWithTag("GameManager"))
+        {
+            GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
+        }
         if (bedendcan&&end1)
         {
             end1.SetActive(true);
