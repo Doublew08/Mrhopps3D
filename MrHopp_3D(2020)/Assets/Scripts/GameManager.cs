@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        //LOL IT DO BE FEEL WEIRD SOMETIMES
 
     }
     void func()
