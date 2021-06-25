@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
        if(EnterP1st == 1)
         {
+            destroy_eyes = true;
             func();
             EnterP1st ++;
         }

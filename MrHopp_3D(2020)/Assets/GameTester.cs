@@ -6,9 +6,12 @@ public class GameTester : MonoBehaviour
 
 {
     public GameObject Manager;
+    public bool NoRabbit;
+    public GameObject Rabbit;
     // Start is called before the first frame update
     void Start()
     {
+       
         if (!GameObject.FindGameObjectWithTag("GameManager"))
         {
             Debug.Log("Testing");
@@ -19,6 +22,12 @@ public class GameTester : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        Rabbit = GameObject.FindGameObjectWithTag("Rabbit");
+        if (NoRabbit)
+        {
+            Rabbit.SetActive(false);
+            NoRabbit = false;
+        }
+
     }
 }

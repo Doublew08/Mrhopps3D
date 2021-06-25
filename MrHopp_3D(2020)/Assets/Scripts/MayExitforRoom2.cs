@@ -23,7 +23,7 @@ public class MayExitforRoom2 : MonoBehaviour
         if (beg_door < Player.transform.position.z && Player.transform.position.z < End_door)
         {
             Image.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 SceneManager.LoadSceneAsync(Room_num);
             }
