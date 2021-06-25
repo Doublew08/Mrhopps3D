@@ -17,11 +17,14 @@ public class Toyfirstscreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.ScreenToBeCleared == 1 && mrnum < 1)
+        if (GameManager.instance)
         {
-            StartCoroutine(screentoshow());
+            if (GameManager.instance.ScreenToBeCleared == 1 && mrnum < 1)
+            {
+                StartCoroutine(screentoshow());
+            }
         }
-        else if(mrnum >= 1)
+        else if (mrnum >= 1)
         {
             StopCoroutine(screentoshow());
         }

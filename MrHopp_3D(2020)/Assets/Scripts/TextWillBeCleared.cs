@@ -15,11 +15,13 @@ public class TextWillBeCleared : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(GameManager.instance.TextToBeCleared <= 1)
+        if (GameManager.instance)
         {
-            StartCoroutine(wait2dest());
-        } 
-    
+            if (GameManager.instance.TextToBeCleared <= 1)
+            {
+                StartCoroutine(wait2dest());
+            }
+        }
     }
     IEnumerator wait2dest()
     {
