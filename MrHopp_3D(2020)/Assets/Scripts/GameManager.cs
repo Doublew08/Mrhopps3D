@@ -22,7 +22,10 @@ public class GameManager : MonoBehaviour
     public bool canend1;
     public bool destroy_eyes;
     //Collision ToyCol;
-
+    public Scene PrevScene;
+    public int PrevSceneint;
+    public int currentSceneint;
+    public Scene currentScene;
 
     private void Start()
     {
@@ -102,6 +105,14 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+        currentScene = SceneManager.GetActiveScene();
+        currentSceneint = currentScene.buildIndex;
+        if(currentSceneint == 2 && PrevSceneint == 1)
+        {
+            GameObject PlayerC = GameObject.FindGameObjectWithTag("PlayerCollector");
+            GameObject player = PlayerC.FindChild("Player1");
+            
+        }
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
        if(EnterP1st == 1)
         {
@@ -125,6 +136,7 @@ public class GameManager : MonoBehaviour
         {
             StopCoroutine(myco2());
         }
+
 
     }
     private void FixedUpdate()

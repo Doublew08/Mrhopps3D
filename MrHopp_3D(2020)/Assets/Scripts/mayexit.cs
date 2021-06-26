@@ -10,6 +10,7 @@ public class mayexit : MonoBehaviour
     public int Room_num;
     float beg_door;
     float End_door;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,14 @@ public class mayexit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         if (beg_door < Player.transform.position.x && Player.transform.position.x < End_door)
         {
             Image.SetActive(true);
             if (Input.GetKey(KeyCode.E))
             {
+               gameManager.PrevScene = SceneManager.GetActiveScene();
+                gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
                 SceneManager.LoadSceneAsync(Room_num);
             }
         }

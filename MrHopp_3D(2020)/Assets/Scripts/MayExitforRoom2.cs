@@ -25,6 +25,9 @@ public class MayExitforRoom2 : MonoBehaviour
             Image.SetActive(true);
             if (Input.GetKey(KeyCode.E))
             {
+                GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+                gameManager.PrevScene = SceneManager.GetActiveScene();
+                gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
                 SceneManager.LoadSceneAsync(Room_num);
             }
         }

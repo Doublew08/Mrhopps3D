@@ -19,6 +19,9 @@ public class RoomMover : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager.PrevScene = SceneManager.GetActiveScene();
+        gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
         SceneManager.LoadSceneAsync(Room2bemoved2);
     }
 
