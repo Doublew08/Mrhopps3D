@@ -107,14 +107,22 @@ public class GameManager : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
-        if(currentSceneint == 2 && PrevSceneint == 1)
+        if(currentSceneint == 2 && PrevSceneint == 1 )
         {
-            GameObject PlayerC = GameObject.FindGameObjectWithTag("PlayerCollector");
-            GameObject player = PlayerC.FindChild("Player1");
+            PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
+            playerActivator.ActivateP1 = true;
             
         }
+        else
+        {
+            if (GameObject.FindGameObjectWithTag("PlayerCollector") != null)
+            {
+                PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
+                playerActivator.ActivateP1 = false;
+            }
+        }
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
-       if(EnterP1st == 1)
+        if (EnterP1st == 1)
         {
             destroy_eyes = true;
             func();
