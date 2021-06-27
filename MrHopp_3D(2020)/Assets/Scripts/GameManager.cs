@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         if(currentSceneint == 2 && PrevSceneint == 1)
         {
             GameObject PlayerC = GameObject.FindGameObjectWithTag("PlayerCollector");
-            GameObject player = PlayerC.FindChild("Player1");
+           // GameObject player = PlayerC.FindChild("Player1");
             
         }
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
