@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class mayexit : MonoBehaviour
 {
-    public GameObject Player;
     public GameObject Image;
     public int Room_num;
     float beg_door;
@@ -21,8 +20,10 @@ public class mayexit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Transform Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        if (beg_door < Player.transform.position.x && Player.transform.position.x < End_door)
+        if (beg_door < Player.position.x && Player.position.x < End_door)
         {
             Image.SetActive(true);
             if (Input.GetKey(KeyCode.E))

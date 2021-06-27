@@ -8,7 +8,6 @@ public class floating : MonoBehaviour
     public float degreesPerSecond = 15.0f;
     public float amplitude = 0.5f;
     public float frequency = 1f;
-    public GameObject Player;
     public GameObject Image;
     public GameObject Drawing;
     //public int Room_num;
@@ -33,7 +32,9 @@ public class floating : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Transform Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+
         // Spin object around Y-Axis
         transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f), Space.World);
 
@@ -42,7 +43,7 @@ public class floating : MonoBehaviour
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
 
         transform.position = tempPos;
-        if (beg_door < Player.transform.position.x && Player.transform.position.x < End_door)
+        if (beg_door < Player.position.x && Player.position.x < End_door)
         {
             Image.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E)) 
