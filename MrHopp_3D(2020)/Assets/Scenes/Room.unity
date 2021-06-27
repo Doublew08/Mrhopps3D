@@ -583,7 +583,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203426970}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 1ba4dc6803c9bd448802bc570fbc5db1, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fe0cf82407afd4a4980a58139dd20ed2, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -3641,7 +3641,6 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
-  Player: {fileID: 1588632468}
   Image: {fileID: 426335762}
   Drawing: {fileID: 639853398}
   SeeingTheDrawing: 0
@@ -5436,7 +5435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be9cd7cc17fc0c4aa8588f3d83b1c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1588632468}
   Image: {fileID: 884866547}
   Room_num: 8
 --- !u!1 &1705030931
