@@ -132,6 +132,20 @@ public class GameManager : MonoBehaviour
             if (GameObject.FindGameObjectWithTag("PlayerCollector") != null)
             {
                 PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
+                playerActivator.ActivateP2 = false;
+            }
+        }
+        if (currentSceneint == 2 && PrevSceneint == 2)
+        {
+            PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
+            playerActivator.ActivateP3 = true;
+
+        }
+        else
+        {
+            if (GameObject.FindGameObjectWithTag("PlayerCollector") != null)
+            {
+                PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
                 playerActivator.ActivateP3 = false;
             }
         }
