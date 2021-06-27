@@ -27,7 +27,7 @@ public class StaminaScript : MonoBehaviour
     }
     public void DecreaseInStamina(float amount)
     {
-        Stamina = Stamina - amount;
+        Stamina = Stamina - amount*2;
         StaminaSlider.value = Stamina;
         if (Stamina < 0)
         {
