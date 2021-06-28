@@ -1870,6 +1870,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5009b98e8211db3449211cfc6df3befa, type: 3}
+--- !u!1 &797664752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4447367405089927720, guid: bec016a586c259945a4682e83c295299,
+    type: 3}
+  m_PrefabInstance: {fileID: 7775078008756214298}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797664753}
+  m_Layer: 0
+  m_Name: DragonChest Variant
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &797664753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8332012670068881440, guid: bec016a586c259945a4682e83c295299,
+    type: 3}
+  m_PrefabInstance: {fileID: 7775078008756214298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797664752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &839125905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4130,6 +4162,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4447367405089927720, guid: bec016a586c259945a4682e83c295299,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7433131333440794769, guid: bec016a586c259945a4682e83c295299,
         type: 3}
       propertyPath: m_Name

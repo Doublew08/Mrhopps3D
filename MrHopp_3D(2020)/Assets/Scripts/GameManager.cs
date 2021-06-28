@@ -110,8 +110,13 @@ public class GameManager : MonoBehaviour
         currentSceneint = currentScene.buildIndex;
         /*if(currentSceneint == 2 && PrevSceneint == 1 )
         {
+//<<<<<<< HEAD
+            GameObject PlayerC = GameObject.FindGameObjectWithTag("PlayerCollector");
+            //GameObject player = PlayerC.FindChild("Player1");
+//=======
             PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
             playerActivator.ActivateP1 = true;
+//>>>>>>> 48ec4555340b6ef6c6e7f1ff12abf04d1f94afab
             
         }
         else
