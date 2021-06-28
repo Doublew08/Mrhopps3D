@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public int PrevSceneint;
     public int currentSceneint;
     public Scene currentScene;
+    string PlayerController;
 
     private void Start()
     {
@@ -107,7 +108,7 @@ public class GameManager : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
-        if(currentSceneint == 2 && PrevSceneint == 1 )
+        /*if(currentSceneint == 2 && PrevSceneint == 1 )
         {
             PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
             playerActivator.ActivateP1 = true;
@@ -148,7 +149,8 @@ public class GameManager : MonoBehaviour
                 PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
                 playerActivator.ActivateP3 = false;
             }
-        }
+        }*/
+
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
         if (EnterP1st == 1)
         {
@@ -172,13 +174,48 @@ public class GameManager : MonoBehaviour
         {
             StopCoroutine(myco2());
         }
+        if (GameObject.Find(PlayerController) != null)
+        {
+
+        }
+        
+        AdjustPlayerSpawn(2, 1, "PlayerCollector", 0);
+        AdjustPlayerSpawn(2, 8, "PlayerCollector", 1);
+        AdjustPlayerSpawn(2, 2, "PlayerCollector", 2);
+        AdjustPlayerSpawn(3, 2, "PlayerCollector2", 0);
+        AdjustPlayerSpawn(3, 9, "PlayerCollector2", 1);
+        AdjustPlayerSpawn(3, 3, "PlayerCollector2", 2);
+
 
 
     }
+    public void AdjustPlayerSpawn(int currentSint,int PrevSint,string PlayerController,int activator)
+    {
+        if (currentSceneint == currentSint && PrevSceneint == PrevSint)
+        {
+            PlayerActivator playerActivator = GameObject.Find(PlayerController).GetComponent<PlayerActivator>();
+            playerActivator.Activate[activator] = true;
+
+        }
+        else
+        {
+            if (GameObject.Find(PlayerController) != null)
+            {
+                PlayerActivator playerActivator = GameObject.Find(PlayerController).GetComponent<PlayerActivator>();
+                playerActivator.Activate[activator] = false;
+            }
+        }
+    }
     private void FixedUpdate()
     {
-        //LOL IT DO BE FEEL WEIRD SOMETIMES
-
+        /*
+        Bool ActivateP1;
+        Bool ActivateP2;
+        Bool ActivateP2;
+         void callbool(Int ActivatePnum){
+         Activate{ActivatePnum} = true 
+        }
+        */
     }
     void func()
     {

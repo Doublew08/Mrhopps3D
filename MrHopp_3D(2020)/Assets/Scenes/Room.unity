@@ -1473,6 +1473,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3fef212943a60d4bba7317ef8215ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Activate: 000000
+  Players:
+  - {fileID: 1588632468}
+  - {fileID: 1523737348}
+  - {fileID: 919214113}
   ActivateP1: 0
   P1: {fileID: 1588632468}
   ActivateP2: 0
@@ -3576,7 +3581,6 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
-  Player: {fileID: 1588632468}
   Image: {fileID: 426335762}
   Drawing: {fileID: 639853398}
   SeeingTheDrawing: 0
@@ -5365,7 +5369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be9cd7cc17fc0c4aa8588f3d83b1c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1588632468}
   Image: {fileID: 884866547}
   Room_num: 8
 --- !u!1 &1705030931
