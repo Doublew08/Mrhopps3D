@@ -43,7 +43,7 @@ public class RabbitMoveWithRayCast : MonoBehaviour
     IEnumerator RabbitCatchThePlayer()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
        
         
     }
