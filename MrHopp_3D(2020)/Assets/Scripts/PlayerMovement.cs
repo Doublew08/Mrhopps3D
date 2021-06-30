@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     
     public bool canmove = true ;
     public float speed = 40f;
-    public float jump = 50;
-    public float gravity = 100f;
+    public float jump = 50f;
+    public float gravity = 300f;
 
 
     float hor;
