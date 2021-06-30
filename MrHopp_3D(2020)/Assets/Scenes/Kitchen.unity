@@ -1476,6 +1476,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1167185438169322820, guid: d8f983f14f1a4ea40b08d6ade05a5333,
+        type: 3}
+      propertyPath: gravity
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167185438169322820, guid: d8f983f14f1a4ea40b08d6ade05a5333,
+        type: 3}
+      propertyPath: jump
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1167185438169322822, guid: d8f983f14f1a4ea40b08d6ade05a5333,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2523,7 +2533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be9cd7cc17fc0c4aa8588f3d83b1c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 317982925}
   Image: {fileID: 816004243}
   Room_num: 0
 --- !u!114 &2025994881
