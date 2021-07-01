@@ -2547,6 +2547,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyRabbit
       objectReference: {fileID: 0}
+    - target: {fileID: 1018247644170662884, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
 --- !u!1001 &687488288
@@ -4177,7 +4182,7 @@ PrefabInstance:
     - target: {fileID: 8901537383604570976, guid: 653d372ff978bd44b8ec6af440d909a2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 339.5
+      value: 368.89
       objectReference: {fileID: 0}
     - target: {fileID: 8901537383604570976, guid: 653d372ff978bd44b8ec6af440d909a2,
         type: 3}
@@ -4218,6 +4223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901537383604570976, guid: 653d372ff978bd44b8ec6af440d909a2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 141.22502
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653d372ff978bd44b8ec6af440d909a2, type: 3}
