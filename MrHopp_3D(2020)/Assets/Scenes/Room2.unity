@@ -5982,6 +5982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3fef212943a60d4bba7317ef8215ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NumOfPos: 2
   Activate: 000000
   Players:
   - {fileID: 520447352}

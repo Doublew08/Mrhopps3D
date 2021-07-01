@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerActivator : MonoBehaviour
 {
-    public bool[] Activate = new bool[3];
-    public GameObject[] Players = new GameObject[3];
+    public int NumOfPos;
+    public bool[] Activate;
+    public GameObject[] Players;
   /*  public bool ActivateP1;
     public GameObject P1;
     public bool ActivateP2;
@@ -21,7 +22,7 @@ public class PlayerActivator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         /*if (ActivateP1)
         {
             P1.SetActive(true);
@@ -46,9 +47,11 @@ public class PlayerActivator : MonoBehaviour
         {
             P3.SetActive(false);
         }*/
-        OnNOff(0);
-        OnNOff(1);
-        OnNOff(2);
+      
+       for(int i = NumOfPos; i > -1; i--)
+        {
+            OnNOff(i);
+        }
     }
     void OnNOff(int i)
     {
