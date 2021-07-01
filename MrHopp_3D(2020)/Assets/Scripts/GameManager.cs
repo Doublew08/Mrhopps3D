@@ -195,7 +195,7 @@ public class GameManager : MonoBehaviour
         AdjustPlayerSpawn(5, 4, "PlayerCollector4", 0);
         AdjustPlayerSpawn(5, 5, "PlayerCollector4", 1);
         AdjustPlayerSpawn(6, 5, "PlayerCollector5", 0);
-        AdjustPlayerSpawn(6, 6, "PlayerCollector5", 1);
+        AdjustPlayerSpawn(6, 7, "PlayerCollector5", 1);
 
 
 
