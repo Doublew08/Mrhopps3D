@@ -241,7 +241,10 @@ public class GameManager : MonoBehaviour
         PlayerMovement player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         player.canmove = false;
         yield return new WaitForSeconds(4);
-        helpsign.SetActive(false);
+        if (helpsign)
+        {
+            helpsign.SetActive(false);
+        }
         player.canmove = true;
         startco = true;
         startco2 = false;
