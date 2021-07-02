@@ -187,6 +187,7 @@ public class GameManager : MonoBehaviour
         AdjustPlayerSpawn(2, 1, "PlayerCollector", 0);
         AdjustPlayerSpawn(2, 8, "PlayerCollector", 1);
         AdjustPlayerSpawn(2, 2, "PlayerCollector", 2);
+        AdjustPlayerSpawn(2, 3, "PlayerCollector", 2);
         AdjustPlayerSpawn(3, 2, "PlayerCollector2", 0);
         AdjustPlayerSpawn(3, 9, "PlayerCollector2", 1);
         AdjustPlayerSpawn(3, 3, "PlayerCollector2", 2);
@@ -252,9 +253,15 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator myco2()
     {
-        TaskSign.SetActive(true);
+        if (TaskSign)
+        {
+            TaskSign.SetActive(true);
+        }
         yield return new WaitForSeconds(4);
-        TaskSign.SetActive(false);
+        if (TaskSign)
+        {
+            TaskSign.SetActive(false);
+        }
         canend1 = true; 
         startco2 = true;
     }
