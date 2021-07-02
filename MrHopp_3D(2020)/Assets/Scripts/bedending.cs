@@ -8,6 +8,7 @@ public class bedending : MonoBehaviour
     public GameObject end1;
     public bool bedendcan = false;
     public GameObject endingscreen1;
+    bool canend1bed;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,9 @@ public class bedending : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("GameManager"))
         {
             GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-
+            gameManager.canend1 = canend1bed;
         }
-        if (bedendcan&&end1)
+        if (bedendcan&&canend1bed)
         {
             end1.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
