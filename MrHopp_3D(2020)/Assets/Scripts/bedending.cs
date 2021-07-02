@@ -22,7 +22,7 @@ public class bedending : MonoBehaviour
         if(GameObject.FindGameObjectWithTag("GameManager"))
         {
             GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-            gameManager.canend1 = canend1bed;
+            canend1bed = gameManager.canend1;
         }
         if (bedendcan&&canend1bed)
         {
