@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public int currentSceneint;
     public Scene currentScene;
     string PlayerController;
-
+    public bool RabbitExists;
     private void Start()
     {
         /*OnMessageReceived test = WriteMessage;
@@ -108,53 +108,23 @@ public class GameManager : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
-        /*if(currentSceneint == 2 && PrevSceneint == 1 )
-        {
-//<<<<<<< HEAD
-            GameObject PlayerC = GameObject.FindGameObjectWithTag("PlayerCollector");
-            //GameObject player = PlayerC.FindChild("Player1");
-//=======
-            PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
-            playerActivator.ActivateP1 = true;
-//>>>>>>> 48ec4555340b6ef6c6e7f1ff12abf04d1f94afab
-            
-        }
-        else
-        {
-            if (GameObject.FindGameObjectWithTag("PlayerCollector") != null)
-            {
-                PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
-                playerActivator.ActivateP1 = false;
-            }
-        }
-        if (currentSceneint == 2 && PrevSceneint == 8)
-        {
-            PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
-            playerActivator.ActivateP2 = true;
 
-        }
-        else
+        if (GameObject.FindGameObjectWithTag("Rabbit"))
         {
-            if (GameObject.FindGameObjectWithTag("PlayerCollector") != null)
+            GameObject rab = GameObject.FindGameObjectWithTag("Rabbit");
+            if (RabbitExists)
             {
-                PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
-                playerActivator.ActivateP2 = false;
-            }
-        }
-        if (currentSceneint == 2 && PrevSceneint == 2)
-        {
-            PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
-            playerActivator.ActivateP3 = true;
 
-        }
-        else
-        {
-            if (GameObject.FindGameObjectWithTag("PlayerCollector") != null)
-            {
-                PlayerActivator playerActivator = GameObject.FindGameObjectWithTag("PlayerCollector").GetComponent<PlayerActivator>();
-                playerActivator.ActivateP3 = false;
+                rab.SetActive(true);
+
             }
-        }*/
+            else
+            {
+                rab.SetActive(false);
+            }
+        }
+       
+      
 
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
         if (EnterP1st == 1)
@@ -262,7 +232,8 @@ public class GameManager : MonoBehaviour
         {
             TaskSign.SetActive(false);
         }
-        canend1 = true; 
+        canend1 = true;
+        RabbitExists = true;
         startco2 = true;
     }
 }

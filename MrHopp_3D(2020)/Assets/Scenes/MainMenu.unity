@@ -1395,6 +1395,13 @@ MonoBehaviour:
   startco2: 1
   canend1: 0
   destroy_eyes: 0
+  PrevScene:
+    m_Handle: 0
+  PrevSceneint: 0
+  currentSceneint: 0
+  currentScene:
+    m_Handle: 0
+  RabbitExists: 0
 --- !u!4 &799744584
 Transform:
   m_ObjectHideFlags: 0
@@ -2389,7 +2396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5647059, g: 0.49803925, b: 0.5137255, a: 1}
+  m_Color: {r: 0.5647059, g: 0.49803922, b: 0.5100218, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
