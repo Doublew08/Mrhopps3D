@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
     public Scene currentScene;
     string PlayerController;
     public bool RabbitExists;
+    public bool AppScene;
+    public GameObject Wonder;
+    GameObject WonderSign;
+
     private void Start()
     {
         /*OnMessageReceived test = WriteMessage;
@@ -123,9 +127,9 @@ public class GameManager : MonoBehaviour
                 rab.SetActive(false);
             }
         }
-       
-      
 
+
+        
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
         if (EnterP1st == 1)
         {
@@ -152,6 +156,14 @@ public class GameManager : MonoBehaviour
         if (GameObject.Find(PlayerController) != null)
         {
 
+        }
+        if (AppScene)
+        {
+            StartCoroutine(AppearaneScene());
+        }
+        else
+        {
+            StopCoroutine(AppearaneScene());
         }
         
         AdjustPlayerSpawn(2, 1, "PlayerCollector", 0);
@@ -191,14 +203,7 @@ public class GameManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        /*
-        Bool ActivateP1;
-        Bool ActivateP2;
-        Bool ActivateP2;
-         void callbool(Int ActivatePnum){
-         Activate{ActivatePnum} = true 
-        }
-        */
+     
     }
     void func()
     {
@@ -206,6 +211,15 @@ public class GameManager : MonoBehaviour
       TaskSign = (GameObject)Instantiate(Task, GameObject.FindGameObjectWithTag("Canvas").transform);
         TaskSign.SetActive(false);
         startco = false;
+    }
+    IEnumerator AppearaneScene()
+    {
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        Player.GetComponent<PlayerMovement>().canmove = false;
+        RabbitExists = true;
+        yield return new WaitForSeconds(0.1f);
+        WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
+        yield return new WaitForSeconds(0.1f);
     }
     IEnumerator myco()
     {
@@ -233,7 +247,7 @@ public class GameManager : MonoBehaviour
             TaskSign.SetActive(false);
         }
         canend1 = true;
-        RabbitExists = true;
+        
         startco2 = true;
     }
 }
