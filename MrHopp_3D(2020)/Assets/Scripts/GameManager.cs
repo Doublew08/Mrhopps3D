@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+   [HideInInspector]
     public bool ToBeDestroyedDrawing;
     public int TextToBeCleared;
     public int ScreenToBeCleared;
@@ -17,9 +18,13 @@ public class GameManager : MonoBehaviour
     public GameObject Task;
     GameObject helpsign;
     GameObject TaskSign;
+    [HideInInspector]
     public bool startco = true;
+    [HideInInspector]
     public bool startco2 = true;
+    [HideInInspector]
     public bool canend1;
+    [HideInInspector]
     public bool destroy_eyes;
     //Collision ToyCol;
     public Scene PrevScene;
@@ -27,10 +32,14 @@ public class GameManager : MonoBehaviour
     public int currentSceneint;
     public Scene currentScene;
     string PlayerController;
+    [HideInInspector]
     public bool RabbitExists;
+    [HideInInspector]
     public bool AppScene;
     public GameObject Wonder;
     GameObject WonderSign;
+    public GameObject Leave;
+    GameObject LeaveSign;
 
     private void Start()
     {
@@ -217,9 +226,10 @@ public class GameManager : MonoBehaviour
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         Player.GetComponent<PlayerMovement>().canmove = false;
         RabbitExists = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(2);
         WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1.3f);
+        WonderSign.SetActive(false);
     }
     IEnumerator myco()
     {
