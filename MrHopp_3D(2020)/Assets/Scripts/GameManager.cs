@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
    // [HideInInspector]
     public bool RabbitExists;
   //  [HideInInspector]
-    public bool AppScene;
+    public bool AppScene = true;
     public GameObject Wonder;
     GameObject WonderSign;
     public GameObject Leave;
@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
         {
 
         }
-        if (AppScene)
+        if (!AppScene)
         {
             StartCoroutine(AppearaneScene());
         }
@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
         {
             StopCoroutine(AppearaneScene());
         }
-        if (CompAppscene)
+        if (!CompAppscene)
         {
             StartCoroutine(compAppScenery());
         }
@@ -221,10 +221,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    private void FixedUpdate()
-    {
-     
-    }
     void func()
     {
       helpsign = (GameObject)Instantiate(help, GameObject.FindGameObjectWithTag("Canvas").transform);
@@ -232,13 +228,18 @@ public class GameManager : MonoBehaviour
         TaskSign.SetActive(false);
         startco = false;
     }
+    void Appscene()
+    {
+        WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
+        WonderSign.SetActive(false);
+        AppScene = false;
+    }
     IEnumerator AppearaneScene()
     {
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         Player.GetComponent<PlayerMovement>().canmove = false;
         RabbitExists = true;
         yield return new WaitForSeconds(2);
-        WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
         CompAppscene = true;
         AppScene = false;
        

@@ -23,7 +23,7 @@ public class AppearanceScene : MonoBehaviour
         if (beg < Player.transform.position.z && Player.transform.position.z < End && gameManager.canend1)
         {
             gameManager.RabbitExists = true;
-            gameManager.AppScene = true;
+            gameManager.AppScene = false;
         }
     }
 }
