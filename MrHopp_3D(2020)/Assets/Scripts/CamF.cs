@@ -28,9 +28,9 @@ public class CamF : MonoBehaviour
     void Update()
     {
         PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
-        PlayerMovement2 playerMovement2 = Player.GetComponent<PlayerMovement2>();
+       // PlayerMovement2 playerMovement2 = Player.GetComponent<PlayerMovement2>();
 
-        if (playerMovement.canmove ||playerMovement2.canmove)
+        if (playerMovement.canmove)
         {
             RotateCam();
         }

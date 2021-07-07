@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public bool startco = true;
     [HideInInspector]
     public bool startco2 = true;
-    [HideInInspector]
+   // [HideInInspector]
     public bool canend1;
     [HideInInspector]
     public bool destroy_eyes;
@@ -32,14 +32,16 @@ public class GameManager : MonoBehaviour
     public int currentSceneint;
     public Scene currentScene;
     string PlayerController;
-    [HideInInspector]
+   // [HideInInspector]
     public bool RabbitExists;
-    [HideInInspector]
+  //  [HideInInspector]
     public bool AppScene;
     public GameObject Wonder;
     GameObject WonderSign;
     public GameObject Leave;
     GameObject LeaveSign;
+    [HideInInspector]
+    public bool CompAppscene;
 
     private void Start()
     {
@@ -174,7 +176,16 @@ public class GameManager : MonoBehaviour
         {
             StopCoroutine(AppearaneScene());
         }
-        
+        if (CompAppscene)
+        {
+            StartCoroutine(compAppScenery());
+        }
+        else
+        {
+            StopCoroutine(compAppScenery());
+        }
+
+
         AdjustPlayerSpawn(2, 1, "PlayerCollector", 0);
         AdjustPlayerSpawn(2, 8, "PlayerCollector", 1);
         AdjustPlayerSpawn(2, 2, "PlayerCollector", 2);
@@ -228,8 +239,16 @@ public class GameManager : MonoBehaviour
         RabbitExists = true;
         yield return new WaitForSeconds(2);
         WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
-        yield return new WaitForSeconds(1.3f);
+        CompAppscene = true;
+        AppScene = false;
+       
+    }
+    IEnumerator compAppScenery()
+    {
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        yield return new WaitForSeconds(1.5f);
         WonderSign.SetActive(false);
+        Player.GetComponent<PlayerMovement>().canmove = true;
     }
     IEnumerator myco()
     {
