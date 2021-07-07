@@ -231,7 +231,9 @@ public class GameManager : MonoBehaviour
     void Appscene()
     {
         WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
+        LeaveSign = (GameObject)Instantiate(Leave, GameObject.FindGameObjectWithTag("Canvas").transform);
         WonderSign.SetActive(false);
+        LeaveSign.SetActive(false);
         AppScene = false;
     }
     IEnumerator AppearaneScene()
@@ -240,10 +242,9 @@ public class GameManager : MonoBehaviour
         Player.GetComponent<PlayerMovement>().canmove = false;
         RabbitExists = true;
         yield return new WaitForSeconds(2);
-        CompAppscene = true;
-        AppScene = false;
-       
-    }
+        AppScene = true;
+        CompAppscene = false;
+       }
     IEnumerator compAppScenery()
     {
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
