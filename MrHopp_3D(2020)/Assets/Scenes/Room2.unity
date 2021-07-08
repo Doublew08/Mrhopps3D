@@ -834,13 +834,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11983737, y: 0.11615377, z: 0.6405956}
   m_Center: {x: -0.008002561, y: 0.0081838975, z: 0.29963377}
---- !u!114 &224098771
+--- !u!1 &224098771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7036116503639193279, guid: d1e082ee5e12ebc4ca401fff29e78466,
+    type: 3}
+  m_PrefabInstance: {fileID: 224098768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &224098772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224098769}
+  m_GameObject: {fileID: 224098771}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d81218b2bd12874aab7e533cbb0ee07, type: 3}
@@ -2072,7 +2078,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520447352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 440614ea1f7edb748a163dfbd8b47549, type: 3}
   m_Name: 
@@ -2719,7 +2725,7 @@ PrefabInstance:
     - target: {fileID: 1018247644170662884, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796612663290084325, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
         type: 3}
@@ -5327,7 +5333,7 @@ GameObject:
   - component: {fileID: 1661933014}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5815,7 +5821,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846339767}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 440614ea1f7edb748a163dfbd8b47549, type: 3}
   m_Name: 
@@ -6986,7 +6992,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120446122}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 440614ea1f7edb748a163dfbd8b47549, type: 3}
   m_Name: 

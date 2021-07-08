@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+   [HideInInspector]
     public bool ToBeDestroyedDrawing;
     public int TextToBeCleared;
     public int ScreenToBeCleared;
@@ -17,9 +18,13 @@ public class GameManager : MonoBehaviour
     public GameObject Task;
     GameObject helpsign;
     GameObject TaskSign;
+    [HideInInspector]
     public bool startco = true;
+    [HideInInspector]
     public bool startco2 = true;
+   // [HideInInspector]
     public bool canend1;
+    [HideInInspector]
     public bool destroy_eyes;
     //Collision ToyCol;
     public Scene PrevScene;
@@ -27,10 +32,16 @@ public class GameManager : MonoBehaviour
     public int currentSceneint;
     public Scene currentScene;
     string PlayerController;
+   // [HideInInspector]
     public bool RabbitExists;
-    public bool AppScene;
+  //  [HideInInspector]
+    public bool AppScene = true;
     public GameObject Wonder;
     GameObject WonderSign;
+    public GameObject Leave;
+    GameObject LeaveSign;
+    [HideInInspector]
+    public bool CompAppscene;
 
     private void Start()
     {
@@ -157,7 +168,7 @@ public class GameManager : MonoBehaviour
         {
 
         }
-        if (AppScene)
+        if (!AppScene)
         {
             StartCoroutine(AppearaneScene());
         }
@@ -165,7 +176,16 @@ public class GameManager : MonoBehaviour
         {
             StopCoroutine(AppearaneScene());
         }
-        
+        if (!CompAppscene)
+        {
+            StartCoroutine(compAppScenery());
+        }
+        else
+        {
+            StopCoroutine(compAppScenery());
+        }
+
+
         AdjustPlayerSpawn(2, 1, "PlayerCollector", 0);
         AdjustPlayerSpawn(2, 8, "PlayerCollector", 1);
         AdjustPlayerSpawn(2, 2, "PlayerCollector", 2);
@@ -201,10 +221,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    private void FixedUpdate()
-    {
-     
-    }
     void func()
     {
       helpsign = (GameObject)Instantiate(help, GameObject.FindGameObjectWithTag("Canvas").transform);
@@ -212,14 +228,29 @@ public class GameManager : MonoBehaviour
         TaskSign.SetActive(false);
         startco = false;
     }
+    void Appscene()
+    {
+        WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
+        LeaveSign = (GameObject)Instantiate(Leave, GameObject.FindGameObjectWithTag("Canvas").transform);
+        WonderSign.SetActive(false);
+        LeaveSign.SetActive(false);
+        AppScene = false;
+    }
     IEnumerator AppearaneScene()
     {
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         Player.GetComponent<PlayerMovement>().canmove = false;
         RabbitExists = true;
-        yield return new WaitForSeconds(0.1f);
-        WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(2);
+        AppScene = true;
+        CompAppscene = false;
+       }
+    IEnumerator compAppScenery()
+    {
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        yield return new WaitForSeconds(1.5f);
+        WonderSign.SetActive(false);
+        Player.GetComponent<PlayerMovement>().canmove = true;
     }
     IEnumerator myco()
     {
