@@ -12,6 +12,8 @@ public class WayPoints : MonoBehaviour
     private Animator RabbitAnimator;
     private float rotationSpeed = 2.0f;
     
+    
+    
 
 
 
@@ -19,21 +21,24 @@ public class WayPoints : MonoBehaviour
     public List<Transform> waypoints = new List<Transform>();
     public  float movementSpeed = 15.0f;
     public float LookR=121;
-    
+    public bool CanMove = false;
+
     void Start()
     {
         lastWaypointIndex = waypoints.Count - 1;
         targetWaypoint = waypoints[targetWaypointIndex];
         RabbitAnimator = GetComponent<Animator>();
        
+       
     }
 
-    
+
     void Update()
     {
-       
 
 
+        if (!CanMove)
+        {
             float movementStep = movementSpeed * Time.deltaTime;
             float rotationStep = rotationSpeed * Time.deltaTime;
 
@@ -50,7 +55,7 @@ public class WayPoints : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementStep);
             RabbitAnimator.SetFloat("Walk", 0.2f);
-        
+        }                          
     }
 
 
