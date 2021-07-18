@@ -6,6 +6,7 @@ public class AppearanceScene : MonoBehaviour
 {
     float beg;
     float End;
+    public int shown1stapp;
     public static int firstapp;
 
     // Start is called before the first frame update
@@ -18,13 +19,13 @@ public class AppearanceScene : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        shown1stapp = firstapp;
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         if (beg < Player.transform.position.z && Player.transform.position.z < End && gameManager.canend1)
         {
             firstapp++;
-            Debug.Log("app scene should run");
         }
     }
 }

@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
     {
         if (AppearanceScene.firstapp == 1)
         {
+            Debug.Log("app scene should run");
             RabbitExists = true;
             AppScene = false;
             Appscene();
@@ -185,11 +186,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void DO(bool startco, Func<IEnumerator> myco)
-    {
-        throw new NotImplementedException();
-    }
-
     public void AdjustPlayerSpawn(int currentSint,int PrevSint,string PlayerController,int activator)
     {
         if (currentSceneint == currentSint && PrevSceneint == PrevSint)
@@ -225,7 +221,10 @@ public class GameManager : MonoBehaviour
     IEnumerator AppearaneScene()
     {
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        Player.GetComponent<PlayerMovement>().canmove = false;
+        if (Player)
+        {
+            Player.GetComponent<PlayerMovement>().canmove = false;
+        }
         RabbitExists = true;
         yield return new WaitForSeconds(2);
         AppScene = true;
