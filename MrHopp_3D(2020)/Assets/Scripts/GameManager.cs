@@ -72,22 +72,12 @@ public class GameManager : MonoBehaviour
         {
 
             TextToBeCleared++;
-        }
-        /*if(scene.buildIndex == 1 && EnterP1st == 2)
-        {
-
-            bedending bed = GameObject.FindGameObjectWithTag("Bed").GetComponent<bedending>();
-            bed.bedendcan = true;
-        }*/
-
-
+        }      
     }
     void OnSceneLoadedToy(Scene scene, LoadSceneMode mode)
     {
 
-
-
-    }
+   }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.buildIndex == 9)
@@ -119,11 +109,35 @@ public class GameManager : MonoBehaviour
 
 
     }
+   public void appincrease()
+    {
+        if (AppearanceScene.firstapp == 1)
+        {
+            Debug.Log("app scene should run");
+            RabbitExists = true;
+            AppScene = false;
+            Appscene();
+            AppearanceScene.firstapp++;
+        }
+    }
+  void DO (bool doing,string enumerator)
+    {
+        if (!doing)
+        {
+            StartCoroutine(enumerator);
+        }
+        else
+        {
+            StopCoroutine(enumerator);
+        }
+    }
+
+
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
-
+        appincrease();
         if (GameObject.FindGameObjectWithTag("Rabbit"))
         {
             GameObject rab = GameObject.FindGameObjectWithTag("Rabbit");
@@ -137,10 +151,7 @@ public class GameManager : MonoBehaviour
             {
                 rab.SetActive(false);
             }
-        }
-
-
-        
+        }        
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
         if (EnterP1st == 1)
         {
@@ -148,44 +159,14 @@ public class GameManager : MonoBehaviour
             func();
             EnterP1st ++;
         }
-        if (!startco)
-        {
-            StartCoroutine(myco());
-        }
-        else
-        {
-            StopCoroutine(myco());
-        }
-        if (!startco2)
-        {
-            StartCoroutine(myco2());
-        }
-        else
-        {
-            StopCoroutine(myco2());
-        }
+        DO(startco, "myco");
+        DO(startco2, "myco2");
+        DO(AppScene, "AppearaneScene");
+        DO(CompAppscene, "compAppScenery");
         if (GameObject.Find(PlayerController) != null)
         {
 
         }
-        if (!AppScene)
-        {
-            StartCoroutine(AppearaneScene());
-        }
-        else
-        {
-            StopCoroutine(AppearaneScene());
-        }
-        if (!CompAppscene)
-        {
-            StartCoroutine(compAppScenery());
-        }
-        else
-        {
-            StopCoroutine(compAppScenery());
-        }
-
-
         AdjustPlayerSpawn(2, 1, "PlayerCollector", 0);
         AdjustPlayerSpawn(2, 8, "PlayerCollector", 1);
         AdjustPlayerSpawn(2, 2, "PlayerCollector", 2);
@@ -204,6 +185,7 @@ public class GameManager : MonoBehaviour
 
 
     }
+
     public void AdjustPlayerSpawn(int currentSint,int PrevSint,string PlayerController,int activator)
     {
         if (currentSceneint == currentSint && PrevSceneint == PrevSint)
@@ -239,7 +221,10 @@ public class GameManager : MonoBehaviour
     IEnumerator AppearaneScene()
     {
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        Player.GetComponent<PlayerMovement>().canmove = false;
+        if (Player)
+        {
+            Player.GetComponent<PlayerMovement>().canmove = false;
+        }
         RabbitExists = true;
         yield return new WaitForSeconds(2);
         AppScene = true;
@@ -249,8 +234,15 @@ public class GameManager : MonoBehaviour
     {
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         yield return new WaitForSeconds(1.5f);
-        WonderSign.SetActive(false);
-        Player.GetComponent<PlayerMovement>().canmove = true;
+        if (WonderSign)
+        {
+            WonderSign.SetActive(false);
+        }
+        if (Player)
+        {
+            Player.GetComponent<PlayerMovement>().canmove = true;
+
+        }
     }
     IEnumerator myco()
     {
