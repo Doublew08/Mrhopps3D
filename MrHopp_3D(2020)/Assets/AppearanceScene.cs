@@ -23,7 +23,7 @@ public class AppearanceScene : MonoBehaviour
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         if (beg < Player.transform.position.z && Player.transform.position.z < End && gameManager.canend1)
         {
-           GameManager.instance.appincrease();
+            firstapp++;
             Debug.Log("app scene should run");
         }
     }

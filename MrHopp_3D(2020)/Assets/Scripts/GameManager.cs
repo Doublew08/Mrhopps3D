@@ -72,22 +72,12 @@ public class GameManager : MonoBehaviour
         {
 
             TextToBeCleared++;
-        }
-        /*if(scene.buildIndex == 1 && EnterP1st == 2)
-        {
-
-            bedending bed = GameObject.FindGameObjectWithTag("Bed").GetComponent<bedending>();
-            bed.bedendcan = true;
-        }*/
-
-
+        }      
     }
     void OnSceneLoadedToy(Scene scene, LoadSceneMode mode)
     {
 
-
-
-    }
+   }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.buildIndex == 9)
@@ -146,7 +136,7 @@ public class GameManager : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
-
+        appincrease();
         if (GameObject.FindGameObjectWithTag("Rabbit"))
         {
             GameObject rab = GameObject.FindGameObjectWithTag("Rabbit");
