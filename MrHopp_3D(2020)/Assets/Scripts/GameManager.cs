@@ -214,7 +214,7 @@ public class GameManager : MonoBehaviour
     {
         WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
         LeaveSign = (GameObject)Instantiate(Leave, GameObject.FindGameObjectWithTag("Canvas").transform);
-        WonderSign.SetActive(false);
+        
         LeaveSign.SetActive(false);
         AppScene = false;
     }
@@ -226,26 +226,37 @@ public class GameManager : MonoBehaviour
             Player.GetComponent<PlayerMovement>().canmove = false;
         }
         RabbitExists = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3.5f);
+        if (WonderSign)
+        {
+            WonderSign.SetActive(false);
+        }
         AppScene = true;
         CompAppscene = false;
        }
     IEnumerator compAppScenery()
     {
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        yield return new WaitForSeconds(1.5f);
-        if (WonderSign)
+        if (LeaveSign)
         {
-            WonderSign.SetActive(false);
+            LeaveSign.SetActive(true);
         }
         if (Player)
         {
             Player.GetComponent<PlayerMovement>().canmove = true;
 
         }
+        
+        yield return new WaitForSeconds(3f);
+        if (LeaveSign)
+        {
+            LeaveSign.SetActive(false);
+        }
+        CompAppscene = true;
     }
     IEnumerator myco()
     {
+
         PlayerMovement player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         player.canmove = false;
         yield return new WaitForSeconds(4);
