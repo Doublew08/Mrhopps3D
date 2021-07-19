@@ -5984,7 +5984,7 @@ PrefabInstance:
     - target: {fileID: 4933772131411432186, guid: 5009b98e8211db3449211cfc6df3befa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -386
+      value: -387.553
       objectReference: {fileID: 0}
     - target: {fileID: 4933772131411432186, guid: 5009b98e8211db3449211cfc6df3befa,
         type: 3}
@@ -6035,6 +6035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933772131411432186, guid: 5009b98e8211db3449211cfc6df3befa,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 196.89374
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5009b98e8211db3449211cfc6df3befa, type: 3}
@@ -6952,6 +6957,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Christmas tree N221218
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 31d778bdff94b9c40b0ebcdc48961377,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3516646719494382303, guid: 31d778bdff94b9c40b0ebcdc48961377,
         type: 3}
