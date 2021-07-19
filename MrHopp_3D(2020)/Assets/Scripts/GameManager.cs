@@ -138,12 +138,11 @@ public class GameManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
         appincrease();
-        if (GameObject.FindGameObjectWithTag("Rabbit"))
-        {
-            GameObject rab = GameObject.FindGameObjectWithTag("Rabbit");
-            if (RabbitExists)
-            {
 
+        GameObject rab = GameObject.FindGameObjectWithTag("Rabbit");
+
+        if (RabbitExists)
+            {
                 rab.SetActive(true);
 
             }
@@ -151,7 +150,7 @@ public class GameManager : MonoBehaviour
             {
                 rab.SetActive(false);
             }
-        }        
+                
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
         if (EnterP1st == 1)
         {
