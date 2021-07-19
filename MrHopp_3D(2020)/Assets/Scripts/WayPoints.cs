@@ -21,7 +21,7 @@ public class WayPoints : MonoBehaviour
     public List<Transform> waypoints = new List<Transform>();
     public  float movementSpeed = 15.0f;
     public float LookR=121;
-    public bool CanMove = false;
+    public bool CanMove =false;
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class WayPoints : MonoBehaviour
     {
 
 
-        if (!CanMove)
+        if (CanMove==true)
         {
             float movementStep = movementSpeed * Time.deltaTime;
             float rotationStep = rotationSpeed * Time.deltaTime;

@@ -24,9 +24,14 @@ public class DrawRayCastFromTheBottle : MonoBehaviour
     public void hit()
     {
         RaycastHit ray;
+        Ray ray2;
         if (Physics.Raycast(transform.position, transform.up, out ray, Mathf.Infinity))
         {
-            Debug.Log("PlayerFound");
+            if (ray.collider.gameObject.tag == "Player")
+            {
+                Debug.Log("PlayerFound");
+            }
+            
             RabbitMove.CanMove = true;
         }
     }
