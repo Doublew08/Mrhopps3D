@@ -42,10 +42,10 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.455
+    value: 0.356
   smoothness:
     overrideState: 1
-    value: 0.21
+    value: 0.167
   roundness:
     overrideState: 0
     value: 1
@@ -84,7 +84,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 2
+    value: 1
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 1
-    value: -0.03
+    value: -1.27
   contrast:
     overrideState: 0
     value: 0
