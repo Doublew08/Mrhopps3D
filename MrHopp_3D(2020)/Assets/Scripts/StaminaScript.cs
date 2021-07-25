@@ -33,7 +33,7 @@ public class StaminaScript : MonoBehaviour
         {
             Stamina = 0;
             Debug.Log("You dont have enough stamina");
-            Player.speed = 6f;   
+            Player.speed = 0f;   
         }
     }
     void IncreaseTheStamina()
