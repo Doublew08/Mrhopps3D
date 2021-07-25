@@ -17,13 +17,13 @@ public class AppearanceScene : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         shown1stapp = firstapp;
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-        GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        if (beg < Player.transform.position.z && Player.transform.position.z < End && gameManager.canend1)
+        Transform Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        if (beg < Player.position.z && Player.position.z < End && gameManager.canend1)
         {
             firstapp++;
         }

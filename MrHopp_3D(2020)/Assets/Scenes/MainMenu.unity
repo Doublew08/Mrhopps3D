@@ -1415,7 +1415,7 @@ MonoBehaviour:
   currentScene:
     m_Handle: 0
   RabbitExists: 0
-  AppScene: 0
+  AppScene: 1
   Wonder: {fileID: 9203266530980157878, guid: e7fc69f5af55f6741874ee9a95f8a3ed, type: 3}
   Leave: {fileID: 9203266530980157878, guid: de6ee92bf74d82342a110f39d58a37d5, type: 3}
   CompAppscene: 0

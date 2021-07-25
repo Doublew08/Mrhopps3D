@@ -140,16 +140,19 @@ public class GameManager : MonoBehaviour
         appincrease();
 
         GameObject rab = GameObject.FindGameObjectWithTag("Rabbit");
+        if (GameObject.FindGameObjectWithTag("Rabbit"))
+        {
+            if (RabbitExists)
+            
+                {
+                rab.GetComponent<WayPoints>().CanMove = true;
 
-        if (RabbitExists)
-            {
-                rab.SetActive(true);
-
-            }
+                }
             else
-            {
-                rab.SetActive(false);
+                {
+                rab.GetComponent<WayPoints>().CanMove = false;
             }
+        }
                 
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
         if (EnterP1st == 1)
@@ -213,9 +216,9 @@ public class GameManager : MonoBehaviour
     {
         WonderSign = (GameObject)Instantiate(Wonder, GameObject.FindGameObjectWithTag("Canvas").transform);
         LeaveSign = (GameObject)Instantiate(Leave, GameObject.FindGameObjectWithTag("Canvas").transform);
-        
         LeaveSign.SetActive(false);
         AppScene = false;
+        GameObject.Find("wall (20)").SetActive(false);
     }
     IEnumerator AppearaneScene()
     {
