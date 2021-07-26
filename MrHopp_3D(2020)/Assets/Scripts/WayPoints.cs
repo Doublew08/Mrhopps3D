@@ -37,8 +37,8 @@ public class WayPoints : MonoBehaviour
     {
 
 
-        if (CanMove==true)
-        {
+        /*if (CanMove==true)
+       // {*/
             float movementStep = movementSpeed * Time.deltaTime;
             float rotationStep = rotationSpeed * Time.deltaTime;
 
@@ -55,7 +55,7 @@ public class WayPoints : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementStep);
             RabbitAnimator.SetFloat("Walk", 0.2f);
-        }                          
+        //}                          
     }
 
 
