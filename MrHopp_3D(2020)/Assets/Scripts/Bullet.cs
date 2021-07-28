@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     private float NextBullet;
     public float FireRate;
     public Transform SpawnPoint;
+    public float BulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class Bullet : MonoBehaviour
                 NextBullet = FireRate + Time.time;
 
                 bullet = Instantiate(BulletPrefab, SpawnPoint.position, Quaternion.identity);
-                bullet.gameObject.GetComponent<Rigidbody>().velocity = transform.forward * 100f;
+                bullet.gameObject.GetComponent<Rigidbody>().velocity = transform.forward * BulletSpeed;
             }
             Debug.Log("Shooting");
             StartCoroutine(destroy());
