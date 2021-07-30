@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-     GameObject bullet;
-    public GameObject BulletPrefab;
+    Rigidbody Clone;
+    public Rigidbody BulletPrefab;
     private float NextBullet;
     public float FireRate;
     public Transform SpawnPoint;
@@ -23,20 +23,16 @@ public class Bullet : MonoBehaviour
         {
             if (Time.time > NextBullet)
             {
-                NextBullet = FireRate + Time.time;
-
-                bullet = Instantiate(BulletPrefab, SpawnPoint.position, Quaternion.identity);
-                bullet.gameObject.GetComponent<Rigidbody>().velocity = transform.forward * BulletSpeed;
+                NextBullet = Time.time + FireRate;
+                Clone = Instantiate(BulletPrefab, transform.position, transform.rotation);
+                Clone.velocity = transform.TransformDirection(-Vector3.up * BulletSpeed);
+                Destroy(Clone.gameObject, 3);
             }
             Debug.Log("Shooting");
-            StartCoroutine(destroy());
+            
             
         }
     }
 
-    IEnumerator destroy()
-    {
-        yield return new WaitForSeconds(3);
-        Destroy(bullet);
-    }
+   
 }
