@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MayExitforRoom2 : MonoBehaviour
 {
-    public GameObject Player;
     public GameObject Image;
     public int Room_num;
     float beg_door;
@@ -20,17 +19,23 @@ public class MayExitforRoom2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (beg_door < Player.transform.position.z && Player.transform.position.z < End_door)
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+
+        if (beg_door < Player.transform.position.z)
         {
-            Image.SetActive(true);
-            if (Input.GetKey(KeyCode.E))
+            if (Player.transform.position.z < End_door)
             {
-                GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-                gameManager.PrevScene = SceneManager.GetActiveScene();
-                gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
-                SceneManager.LoadSceneAsync(Room_num);
+                Image.SetActive(true);
+                if (Input.GetKey(KeyCode.E))
+                {
+                    GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+                    gameManager.PrevScene = SceneManager.GetActiveScene();
+                    gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
+                    SceneManager.LoadSceneAsync(Room_num);
+                }
             }
         }
+
         else
         {
             Image.SetActive(false);

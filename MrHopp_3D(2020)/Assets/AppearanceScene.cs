@@ -8,7 +8,7 @@ public class AppearanceScene : MonoBehaviour
     float End;
     public int shown1stapp;
     public static int firstapp;
-
+    public GameObject Babbit;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +21,27 @@ public class AppearanceScene : MonoBehaviour
     {
         shown1stapp = firstapp;
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-
-        Transform Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        if (beg < Player.position.z && Player.position.z < End && gameManager.canend1)
+        if (gameManager.RabbitExists)
         {
-            firstapp++;
+            Babbit.SetActive(true);
+        }
+        else
+        {
+            Babbit.SetActive(false);
+        }
+
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        if (beg < Player.transform.position.z)
+        {
+            if (Player.transform.position.z < End)
+            {
+                if (gameManager.canend1)
+                {
+                    {
+                        firstapp++;
+                    }
+                }
+            }
         }
     }
 }

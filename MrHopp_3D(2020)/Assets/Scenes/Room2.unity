@@ -1218,7 +1218,7 @@ PrefabInstance:
     - target: {fileID: 6518997691028768924, guid: 278941cfba0a8a14cb8571113f4c93d7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -37.4
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 6518997691028768924, guid: 278941cfba0a8a14cb8571113f4c93d7,
         type: 3}
@@ -1307,6 +1307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shown1stapp: 0
+  Babbit: {fileID: 680381193}
 --- !u!65 &249965284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3185,7 +3186,7 @@ PrefabInstance:
     - target: {fileID: 1018247644170662884, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796612663290084325, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
         type: 3}
@@ -3219,6 +3220,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
+--- !u!1 &680381193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1018247644170662884, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 680381192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &687488288
 PrefabInstance:
   m_ObjectHideFlags: 0

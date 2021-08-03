@@ -138,22 +138,26 @@ public class GameManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
         appincrease();
-
+        if (!RabbitExists)
+        {
+            if (GameObject.FindGameObjectWithTag("Rabbit")) { 
+                GameObject.FindGameObjectWithTag("Rabbit").SetActive(false);
+        } }
         GameObject rab = GameObject.FindGameObjectWithTag("Rabbit");
-        if (GameObject.FindGameObjectWithTag("Rabbit"))
+        /*if (GameObject.FindGameObjectWithTag("Rabbit"))
         {
             if (RabbitExists)
-            
-                {
+
+            {
                 rab.GetComponent<WayPoints>().CanMove = true;
 
-                }
+            }
             else
-                {
+            {
                 rab.GetComponent<WayPoints>().CanMove = false;
             }
-        }
-                
+        }*/
+
         //  Warningscreen = Toyfirstscreen.instance.screenwarn;
         if (EnterP1st == 1)
         {
