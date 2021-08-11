@@ -480,6 +480,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: model
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f1398b882713df84fbf62c737d58ae49,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cassette
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1398b882713df84fbf62c737d58ae49, type: 3}
 --- !u!4 &90719302 stripped
@@ -1311,7 +1316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d81218b2bd12874aab7e533cbb0ee07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shown1stapp1: 0
   firstapp: 0
   Babbit: {fileID: 680381193}
 --- !u!65 &249965284

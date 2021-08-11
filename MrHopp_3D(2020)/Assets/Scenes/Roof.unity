@@ -865,6 +865,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: model
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f1398b882713df84fbf62c737d58ae49,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cassette
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1398b882713df84fbf62c737d58ae49, type: 3}
 --- !u!1001 &239874215

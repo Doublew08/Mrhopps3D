@@ -15,6 +15,7 @@ TagManager:
   - Bedcanend
   - PlayerCollector
   - Appear
+  - Cassette
   layers:
   - Default
   - TransparentFX
