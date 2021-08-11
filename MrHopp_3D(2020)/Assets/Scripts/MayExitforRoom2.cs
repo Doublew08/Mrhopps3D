@@ -29,7 +29,7 @@ public class MayExitforRoom2 : MonoBehaviour
                 if (Player.transform.position.z < End_door)
                 {
                     Image.SetActive(true);
-                    if (Input.GetKey(KeyCode.E))
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
                         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
                         gameManager.PrevScene = SceneManager.GetActiveScene();

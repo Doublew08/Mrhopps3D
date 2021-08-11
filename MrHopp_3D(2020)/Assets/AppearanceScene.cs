@@ -6,8 +6,8 @@ public class AppearanceScene : MonoBehaviour
 {
     float beg;
     float End;
-    public int shown1stapp;
-    public static int firstapp;
+    public int shown1stapp1 = 0;
+    public  int firstapp = 0;
     public GameObject Babbit;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class AppearanceScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shown1stapp = firstapp;
+        shown1stapp1 = firstapp;
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         if (gameManager.RabbitExists)
         {
