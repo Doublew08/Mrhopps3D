@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     }
    public void appincrease()
     {
-        if (AppearanceScene.firstapp == 1)
+        if (GameObject.FindGameObjectWithTag("").GetComponent<AppearanceScene>().s == 1)
         {
             Debug.Log("app scene should run");
             RabbitExists = true;
