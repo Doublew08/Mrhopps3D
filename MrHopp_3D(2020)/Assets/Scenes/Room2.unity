@@ -1205,6 +1205,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorV7 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6518997691028673724, guid: 278941cfba0a8a14cb8571113f4c93d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Appear
+      objectReference: {fileID: 0}
     - target: {fileID: 6518997691028768924, guid: 278941cfba0a8a14cb8571113f4c93d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1306,7 +1311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d81218b2bd12874aab7e533cbb0ee07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shown1stapp: 0
+  shown1stapp1: 0
+  firstapp: 0
   Babbit: {fileID: 680381193}
 --- !u!65 &249965284
 BoxCollider:

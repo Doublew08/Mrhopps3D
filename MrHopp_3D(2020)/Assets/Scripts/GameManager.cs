@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     GameObject LeaveSign;
     [HideInInspector]
     public bool CompAppscene;
+    public int shown1stapp1;
+
 
     private void Start()
     {
@@ -111,13 +113,13 @@ public class GameManager : MonoBehaviour
     }
    public void appincrease()
     {
-        if (GameObject.FindGameObjectWithTag("").GetComponent<AppearanceScene>().s == 1)
+        if (shown1stapp1 == 1)
         {
             Debug.Log("app scene should run");
             RabbitExists = true;
             AppScene = false;
             Appscene();
-            AppearanceScene.firstapp++;
+            shown1stapp1++;
         }
     }
   void DO (bool doing,string enumerator)

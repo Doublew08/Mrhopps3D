@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AppearanceScene : MonoBehaviour
+public  class AppearanceScene : MonoBehaviour
 {
     float beg;
     float End;
-    public int shown1stapp1 = 0;
-    public  int firstapp = 0;
+    public int firstapp = 0;
     public GameObject Babbit;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,7 @@ public class AppearanceScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shown1stapp1 = firstapp;
+       GameManager.instance.shown1stapp1 = firstapp;
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         if (gameManager.RabbitExists)
         {
