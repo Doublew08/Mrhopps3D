@@ -21,24 +21,28 @@ public class MayExitforRoom2 : MonoBehaviour
     {
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
 
-        if (beg_door < Player.transform.position.z)
+        if (GameObject.FindGameObjectWithTag("Player"))
         {
-            if (Player.transform.position.z < End_door)
+
+            if (beg_door < Player.transform.position.z)
             {
-                Image.SetActive(true);
-                if (Input.GetKey(KeyCode.E))
+                if (Player.transform.position.z < End_door)
                 {
-                    GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-                    gameManager.PrevScene = SceneManager.GetActiveScene();
-                    gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
-                    SceneManager.LoadSceneAsync(Room_num);
+                    Image.SetActive(true);
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+                        gameManager.PrevScene = SceneManager.GetActiveScene();
+                        gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
+                        SceneManager.LoadSceneAsync(Room_num);
+                    }
                 }
             }
-        }
 
-        else
-        {
-            Image.SetActive(false);
+            else
+            {
+                Image.SetActive(false);
+            }
         }
     }
 }

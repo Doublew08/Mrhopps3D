@@ -31,17 +31,18 @@ public class AppearanceScene : MonoBehaviour
         }
 
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        if (beg < Player.transform.position.z)
-        {
-            if (Player.transform.position.z < End)
+        if (GameObject.FindGameObjectWithTag("Player")){
+            if (beg < Player.transform.position.z)
             {
-                if (gameManager.canend1)
+                if (Player.transform.position.z < End)
                 {
+                    if (gameManager.canend1)
                     {
-                        firstapp++;
+                        {
+                            firstapp++;
+                        }
                     }
                 }
             }
         }
-    }
-}
+    } }
