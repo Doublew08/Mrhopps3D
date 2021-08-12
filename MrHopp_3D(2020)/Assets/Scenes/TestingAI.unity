@@ -537,6 +537,9 @@ MonoBehaviour:
   FireRate: 0.25
   SpawnPoint: {fileID: 1816781995}
   BulletSpeed: 150
+  Ammo: 0
+  IsFiring: 0
+  PlayerAnimator: {fileID: 6729057940904622562}
 --- !u!1 &40405133829996473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,7 +4583,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6208698238142538587}
   - component: {fileID: 6729057940904622562}
-  - component: {fileID: 6729057940904622563}
   m_Layer: 0
   m_Name: Arms
   m_TagString: Untagged
@@ -4607,19 +4609,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6729057940904622563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6729057940904622561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5f3ddfc95ef6ff46a67c88e3bfa89a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireRate: 0
 --- !u!4 &6750086661025733035
 Transform:
   m_ObjectHideFlags: 0

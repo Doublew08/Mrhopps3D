@@ -10,29 +10,54 @@ public class Bullet : MonoBehaviour
     public float FireRate;
     public Transform SpawnPoint;
     public float BulletSpeed;
+    public int Ammo;
+    private int MaxAmmo = 50;
+    public bool IsFiring;
+    public Animator PlayerAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Ammo = MaxAmmo;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetButton("Fire1") && Ammo > 0 && !IsFiring)
         {
             if (Time.time > NextBullet)
             {
+                PlayerAnimator.SetBool("Shoot", true);
+                Debug.Log("Shooting");
                 NextBullet = Time.time + FireRate;
                 Clone = Instantiate(BulletPrefab, transform.position, transform.rotation);
                 Clone.velocity = transform.TransformDirection(-Vector3.up * BulletSpeed);
                 Destroy(Clone.gameObject, 3);
+                IsFiring = true;
+                Ammo--;
+                IsFiring = false;
+                if (Ammo == 0)
+                {
+                    Debug.Log("You Cant Shoot Now ");
+                }
             }
-            Debug.Log("Shooting");
-            
-            
+
+        }
+        else
+        {
+            PlayerAnimator.SetBool("Shoot", false);
+        }
+        if (Input.GetKey(KeyCode.R))
+        {
+            PlayerAnimator.SetBool("Reload", true);
+        }
+        else
+        {
+            PlayerAnimator.SetBool("Reload", false);
         }
     }
+}
 
    
-}
+
