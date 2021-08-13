@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     public Transform SpawnPoint;
     public float BulletSpeed;
     public int Ammo;
-    private int MaxAmmo = 50;
+    private int MaxAmmo = 20;
     public bool IsFiring;
     public Animator PlayerAnimator;
 
@@ -50,12 +50,16 @@ public class Bullet : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.R))
         {
-            PlayerAnimator.SetBool("Reload", true);
+            StartCoroutine(Reload());
         }
-        else
-        {
-            PlayerAnimator.SetBool("Reload", false);
-        }
+        
+    }
+    IEnumerator Reload()
+    {
+        PlayerAnimator.SetBool("Reload", true);
+        yield return new WaitForSeconds(4);
+        PlayerAnimator.SetBool("Reload", false);
+        Ammo = MaxAmmo;
     }
 }
 
