@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     public Transform SpawnPoint;
     public float BulletSpeed;
     public int Ammo;
-    private int MaxAmmo = 20;
+    private int MaxAmmo = 10;
     public bool IsFiring;
     public Animator PlayerAnimator;
 
@@ -48,10 +48,15 @@ public class Bullet : MonoBehaviour
         {
             PlayerAnimator.SetBool("Shoot", false);
         }
-        if (Input.GetKey(KeyCode.R))
+        if (Ammo == 0)
         {
-            StartCoroutine(Reload());
+            if (Input.GetKey(KeyCode.R))
+            {
+                StartCoroutine(Reload());
+            }
+            Debug.Log("You Cant Shoot Now ");
         }
+        
         
     }
     IEnumerator Reload()
