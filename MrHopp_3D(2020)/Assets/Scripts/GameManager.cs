@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     public bool CompAppscene;
     public int shown1stapp1;
     public bool MomScene = true;
+    public bool HaveKey;
+
 
 
     private void Start()
@@ -189,6 +191,7 @@ public class GameManager : MonoBehaviour
         AdjustPlayerSpawn(5, 5, "PlayerCollector4", 1);
         AdjustPlayerSpawn(6, 5, "PlayerCollector5", 0);
         AdjustPlayerSpawn(6, 7, "PlayerCollector5", 1);
+        AdjustPlayerSpawn(5, 6, "PlayerCollector4", 1);
 
 
 

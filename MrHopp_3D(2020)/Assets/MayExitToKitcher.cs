@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class OpenLocker : MonoBehaviour
+public class MayExitToKitcher : MonoBehaviour
 {
     public GameObject Image;
+    public int Room_num;
     float beg_door;
     float End_door;
-    public GameObject Canvaskey;
-    public GameObject Canvas_key;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,18 +25,16 @@ public class OpenLocker : MonoBehaviour
             Transform Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
             GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-            MayExitingScene mayExitingScene = GameObject.Find("Door (2)").GetComponent<MayExitingScene>();
+            OpenLocker openLocker = GameObject.Find("tv_table_2 (1)").GetComponent<OpenLocker>();
             if (beg_door < Player.position.x && Player.position.x < End_door)
             {
                 Image.SetActive(true);
-                if (mayExitingScene.OpenLocker && Input.GetKey(KeyCode.E))
+                if (Input.GetKey(KeyCode.E)&&gameManager.HaveKey)
                 {
-                    Canvaskey = (GameObject)Instantiate(Canvas_key);
-
-                    //do courtine
-                    mayExitingScene.OpenLocker = false;
-                   gameManager.HaveKey = true;
-                    
+                    Destroy(GameObject.Find("Canvas(Key)(Clone)"));
+                    gameManager.PrevScene = SceneManager.GetActiveScene();
+                    gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
+                    SceneManager.LoadSceneAsync(Room_num);
                 }
             }
             else
@@ -45,4 +44,3 @@ public class OpenLocker : MonoBehaviour
         }
     }
 }
-
