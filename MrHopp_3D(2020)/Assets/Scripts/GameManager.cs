@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool CompAppscene;
     public int shown1stapp1;
+    public bool MomScene = true;
 
 
     private void Start()
@@ -261,6 +262,7 @@ public class GameManager : MonoBehaviour
             LeaveSign.SetActive(false);
         }
         CompAppscene = true;
+        MomScene = false;
     }
     IEnumerator myco()
     {
