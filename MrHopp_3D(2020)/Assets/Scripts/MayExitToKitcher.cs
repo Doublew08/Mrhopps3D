@@ -25,7 +25,7 @@ public class MayExitToKitcher : MonoBehaviour
             Transform Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
             GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-            OpenLocker openLocker = GameObject.Find("tv_table_2 (1)").GetComponent<OpenLocker>();
+           // OpenLocker openLocker = GameObject.Find("tv_table_2 (1)").GetComponent<OpenLocker>();
             if (beg_door < Player.position.x && Player.position.x < End_door)
             {
                 Image.SetActive(true);
