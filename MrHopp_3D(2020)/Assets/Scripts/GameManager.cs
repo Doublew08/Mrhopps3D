@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public int shown1stapp1;
     public bool MomScene = true;
     public bool HaveKey;
+    public bool DestroyCassette;
 
 
 
@@ -140,6 +141,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (DestroyCassette)
+        {
+            if (GameObject.FindGameObjectWithTag("Cassette"))
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Cassette"));
+                Destroy(GameObject.FindGameObjectWithTag("TapeImage"));
+                Destroy(GameObject.FindGameObjectWithTag("TapeHand"));
+            }
+        }
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
         appincrease();

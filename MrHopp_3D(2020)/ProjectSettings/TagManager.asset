@@ -16,6 +16,8 @@ TagManager:
   - PlayerCollector
   - Appear
   - Cassette
+  - TapeImage
+  - TapeHand
   layers:
   - Default
   - TransparentFX

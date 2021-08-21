@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CassetteScript : MonoBehaviour
 {
-
+    public static CassetteScript instance;
     public float degreesPerSecond = 15.0f;
     public float amplitude = 0.5f;
     public float frequency = 1f;
@@ -13,7 +13,8 @@ public class CassetteScript : MonoBehaviour
     //public int Room_num;
     float beg_door;
     float End_door;
-    public bool SeeingTheDrawing;
+    public static bool SeeingTapeImage;
+    
 
 
     // Position Storage Variables
@@ -50,8 +51,9 @@ public class CassetteScript : MonoBehaviour
                 Image.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    
-                    SeeingTheDrawing = true;
+                    /*Destroy(gameObject);
+                    Destroy(Image);*/
+                   SeeingTapeImage = true;
 
                     TapeImage.SetActive(true);
                     PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
@@ -59,7 +61,16 @@ public class CassetteScript : MonoBehaviour
                     playerMovement.canmove = false;
 
                 }
-                
+                if (SeeingTapeImage && Input.GetKeyDown(KeyCode.Q))
+                {
+                    TapeImage.SetActive(false);
+                    PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
+
+                    playerMovement.canmove = true;
+                    SeeingTapeImage = false;
+                    GameManager.instance.DestroyCassette = true;
+                    
+                }
             }
             else
             {
