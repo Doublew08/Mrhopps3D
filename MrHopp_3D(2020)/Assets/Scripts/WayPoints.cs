@@ -11,9 +11,9 @@ public class WayPoints : MonoBehaviour
     private int lastWaypointIndex;
     private Animator RabbitAnimator;
     private float rotationSpeed = 2.0f;
-    
-    
-    
+    private RabbitPlace1 place1;
+
+
 
 
 
@@ -28,6 +28,7 @@ public class WayPoints : MonoBehaviour
         lastWaypointIndex = waypoints.Count - 1;
         targetWaypoint = waypoints[targetWaypointIndex];
         RabbitAnimator = GetComponent<Animator>();
+        place1 = FindObjectOfType<RabbitPlace1>();
        
        
     }
@@ -41,20 +42,15 @@ public class WayPoints : MonoBehaviour
        // {*/
             float movementStep = movementSpeed * Time.deltaTime;
             float rotationStep = rotationSpeed * Time.deltaTime;
-
             /*Vector3 directionToTarget = targetWaypoint.position - transform.position;
             Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);*/
-
             //transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep);
-
             Debug.DrawRay(transform.position, transform.forward * 50f, Color.green, 0f);
             //Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
-
             float distance = Vector3.Distance(transform.position, targetWaypoint.position);
             CheckDistanceToWaypoint(distance);
-
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementStep);
-            RabbitAnimator.SetFloat("Walk", 0.2f);
+            StartCoroutine(Walking());
         //}                          
     }
    
@@ -80,6 +76,19 @@ public class WayPoints : MonoBehaviour
         }
 
         targetWaypoint = waypoints[targetWaypointIndex];
+    }
+
+    IEnumerator Walking()
+    {
+        RabbitAnimator.SetFloat("Walk",0.2f);
+        yield return new WaitForSeconds(15F);
+        RabbitAnimator.SetFloat("Walk", 0.0f);
+        RabbitAnimator.SetBool("WalkBack", true);
+        yield return new WaitForSeconds(14f);
+        RabbitAnimator.SetBool("WalkBack", false);
+        RabbitAnimator.SetFloat("Walk", 0.2f);
+
+
     }
 
 }
