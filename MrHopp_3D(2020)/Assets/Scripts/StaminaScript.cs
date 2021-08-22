@@ -40,5 +40,6 @@ public class StaminaScript : MonoBehaviour
     {
         
         Stamina = Stamina +Time.deltaTime*4 ;
+        StaminaSlider.value = StaminaSlider.value + Time.deltaTime * 4;
     }
 }
