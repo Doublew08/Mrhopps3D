@@ -57,9 +57,10 @@ public class WayPoints : MonoBehaviour
             RabbitAnimator.SetFloat("Walk", 0.2f);
         //}                          
     }
-
-
    
+
+
+
     void CheckDistanceToWaypoint(float currentDistance)
     {
         if (currentDistance <= minDistance)

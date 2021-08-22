@@ -8,7 +8,7 @@ ModelImporter:
     second: Armature|Armature|Armature|Armature|Armature|Armature|mixamo.com|Layer0|
   - first:
       74: -203655887218126122
-    second: mixamo.com
+    second: walkback
   - first:
       74: 2667949614841947897
     second: Walk
@@ -70,7 +70,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: mixamo.com
+      name: walkback
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
