@@ -19,6 +19,7 @@ TagManager:
   - TapeImage
   - TapeHand
   - CanvasTapes
+  - Recorder
   layers:
   - Default
   - TransparentFX

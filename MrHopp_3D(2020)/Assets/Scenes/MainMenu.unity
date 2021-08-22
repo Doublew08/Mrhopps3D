@@ -1420,6 +1420,13 @@ MonoBehaviour:
   Wonder: {fileID: 9203266530980157878, guid: e7fc69f5af55f6741874ee9a95f8a3ed, type: 3}
   Leave: {fileID: 9203266530980157878, guid: de6ee92bf74d82342a110f39d58a37d5, type: 3}
   CompAppscene: 0
+  shown1stapp1: 0
+  MomScene: 1
+  HaveKey: 0
+  DestroyCassette: 0
+  CanvasTapes: {fileID: 0}
+  CanvasTapesPrefab: {fileID: 4015825599658872467, guid: 9889c593aeb3bf546842b79abcd6282a,
+    type: 3}
 --- !u!4 &799744584
 Transform:
   m_ObjectHideFlags: 0

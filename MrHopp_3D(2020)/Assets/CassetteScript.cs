@@ -15,7 +15,8 @@ public class CassetteScript : MonoBehaviour
     //public int Room_num;
     float beg_door;
     float End_door;
-    public static bool SeeingTapeImage;
+    public bool SeeingTapeImage;
+    //public bool CanvasActive;
     
     
 
@@ -71,6 +72,7 @@ public class CassetteScript : MonoBehaviour
 
                     playerMovement.canmove = true;
                     SeeingTapeImage = false;
+                   // CanvasActive = true;
 
                     GameManager.instance.DestroyCassette = true;
                     

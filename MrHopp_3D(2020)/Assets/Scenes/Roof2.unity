@@ -1614,6 +1614,7 @@ MonoBehaviour:
   frequency: 1
   Image: {fileID: 1087201084}
   TapeImage: {fileID: 2119488784}
+  SeeingTapeImage: 0
 --- !u!1001 &636650350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3909,7 +3910,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 270c9fa879b0c8d45963337bc990e195,
         type: 3}
       propertyPath: m_TagString
-      value: Cassette
+      value: Recorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 270c9fa879b0c8d45963337bc990e195, type: 3}

@@ -47,8 +47,9 @@ public class GameManager : MonoBehaviour
     public bool MomScene = true;
     public bool HaveKey;
     public bool DestroyCassette;
-    public GameObject CanvasTapes;
+    public GameObject CanvasTape;
     public GameObject CanvasTapesPrefab;
+    public string Cassetteint;
     
 
 
@@ -145,12 +146,26 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        Cassetteint = CanvasTapes.TapesCollected.ToString();
+        
+        
+            
+                if (GameObject.FindGameObjectWithTag("Cassette"))
+                {
+                    if (GameObject.FindGameObjectWithTag("Cassette").name != (CanvasTapes.TapesCollected).ToString())
+                    {
+                        GameObject.FindGameObjectWithTag("Cassette").SetActive(false);
+                    }
+                }
+        
+        
+
         if (DestroyCassette)
         {
-            if (GameObject.FindGameObjectWithTag("Cassette"))
+            if (GameObject.FindGameObjectWithTag("Recorder"))
             {
-                CanvasTapes = (GameObject)Instantiate(CanvasTapesPrefab);
-                Destroy(GameObject.FindGameObjectWithTag("Cassette"));
+                CanvasTape = (GameObject)Instantiate(CanvasTapesPrefab);
+                Destroy(GameObject.FindGameObjectWithTag("Recorder"));
                 Destroy(GameObject.FindGameObjectWithTag("TapeImage"));
                 Destroy(GameObject.FindGameObjectWithTag("TapeHand"));
             }

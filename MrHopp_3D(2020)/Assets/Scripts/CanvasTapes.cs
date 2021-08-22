@@ -7,11 +7,13 @@ public class CanvasTapes : MonoBehaviour
 {
     public static CanvasTapes instance;
     public Text TextTapes;
-    public int TapesCollected;
+    public static int TapesCollected = 0;
+    public Text Task;
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("EndTask");
+        TapesCollected++;
     }
     void Awake()
     {
@@ -34,6 +36,12 @@ public class CanvasTapes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextTapes.text = TapesCollected.ToString() + "/6";
+        TextTapes.text = (TapesCollected-1).ToString() + "/6";
+    }
+    IEnumerator EndTask()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(Task);
+        yield break;
     }
 }
