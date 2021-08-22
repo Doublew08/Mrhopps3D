@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,6 +46,11 @@ public class GameManager : MonoBehaviour
     public int shown1stapp1;
     public bool MomScene = true;
     public bool HaveKey;
+    public bool DestroyCassette;
+    public GameObject CanvasTape;
+    public GameObject CanvasTapesPrefab;
+    public string Cassetteint;
+    
 
 
 
@@ -140,6 +146,30 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        Cassetteint = CanvasTapes.TapesCollected.ToString();
+        
+        
+            
+                if (GameObject.FindGameObjectWithTag("Cassette"))
+                {
+                    if (GameObject.FindGameObjectWithTag("Cassette").name != (CanvasTapes.TapesCollected).ToString())
+                    {
+                        GameObject.FindGameObjectWithTag("Cassette").SetActive(false);
+                    }
+                }
+        
+        
+
+        if (DestroyCassette)
+        {
+            if (GameObject.FindGameObjectWithTag("Recorder"))
+            {
+                CanvasTape = (GameObject)Instantiate(CanvasTapesPrefab);
+                Destroy(GameObject.FindGameObjectWithTag("Recorder"));
+                Destroy(GameObject.FindGameObjectWithTag("TapeImage"));
+                Destroy(GameObject.FindGameObjectWithTag("TapeHand"));
+            }
+        }
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
         appincrease();
@@ -149,21 +179,6 @@ public class GameManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Rabbit").SetActive(false);
         } }
         GameObject rab = GameObject.FindGameObjectWithTag("Rabbit");
-        /*if (GameObject.FindGameObjectWithTag("Rabbit"))
-        {
-            if (RabbitExists)
-
-            {
-                rab.GetComponent<WayPoints>().CanMove = true;
-
-            }
-            else
-            {
-                rab.GetComponent<WayPoints>().CanMove = false;
-            }
-        }*/
-
-        //  Warningscreen = Toyfirstscreen.instance.screenwarn;
         if (EnterP1st == 1)
         {
             destroy_eyes = true;
