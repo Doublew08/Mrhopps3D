@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -46,6 +47,9 @@ public class GameManager : MonoBehaviour
     public bool MomScene = true;
     public bool HaveKey;
     public bool DestroyCassette;
+    public GameObject CanvasTapes;
+    public GameObject CanvasTapesPrefab;
+    
 
 
 
@@ -145,6 +149,7 @@ public class GameManager : MonoBehaviour
         {
             if (GameObject.FindGameObjectWithTag("Cassette"))
             {
+                CanvasTapes = (GameObject)Instantiate(CanvasTapesPrefab);
                 Destroy(GameObject.FindGameObjectWithTag("Cassette"));
                 Destroy(GameObject.FindGameObjectWithTag("TapeImage"));
                 Destroy(GameObject.FindGameObjectWithTag("TapeHand"));
@@ -159,21 +164,6 @@ public class GameManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Rabbit").SetActive(false);
         } }
         GameObject rab = GameObject.FindGameObjectWithTag("Rabbit");
-        /*if (GameObject.FindGameObjectWithTag("Rabbit"))
-        {
-            if (RabbitExists)
-
-            {
-                rab.GetComponent<WayPoints>().CanMove = true;
-
-            }
-            else
-            {
-                rab.GetComponent<WayPoints>().CanMove = false;
-            }
-        }*/
-
-        //  Warningscreen = Toyfirstscreen.instance.screenwarn;
         if (EnterP1st == 1)
         {
             destroy_eyes = true;

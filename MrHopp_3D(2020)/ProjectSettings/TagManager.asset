@@ -18,6 +18,7 @@ TagManager:
   - Cassette
   - TapeImage
   - TapeHand
+  - CanvasTapes
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class CassetteScript : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class CassetteScript : MonoBehaviour
     float beg_door;
     float End_door;
     public static bool SeeingTapeImage;
+    
     
 
 
@@ -68,6 +71,7 @@ public class CassetteScript : MonoBehaviour
 
                     playerMovement.canmove = true;
                     SeeingTapeImage = false;
+
                     GameManager.instance.DestroyCassette = true;
                     
                 }
