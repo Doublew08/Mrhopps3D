@@ -50,7 +50,7 @@ public class WayPoints : MonoBehaviour
             float distance = Vector3.Distance(transform.position, targetWaypoint.position);
             CheckDistanceToWaypoint(distance);
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementStep);
-            StartCoroutine(Walking());
+            RabbitAnimator.SetFloat("Walk", 0.2f);
         //}                          
     }
    
@@ -78,17 +78,17 @@ public class WayPoints : MonoBehaviour
         targetWaypoint = waypoints[targetWaypointIndex];
     }
 
-    IEnumerator Walking()
+   /* IEnumerator Walking()
     {
-        RabbitAnimator.SetFloat("Walk",0.2f);
+        /*RabbitAnimator.SetFloat("Walk",0.2f);
         yield return new WaitForSeconds(15F);
         RabbitAnimator.SetFloat("Walk", 0.0f);
         RabbitAnimator.SetBool("WalkBack", true);
-        yield return new WaitForSeconds(14f);
+       /* yield return new WaitForSeconds(14f);
         RabbitAnimator.SetBool("WalkBack", false);
-        RabbitAnimator.SetFloat("Walk", 0.2f);
+        RabbitAnimator.SetFloat("Walk", 0.2f);*/
 
 
-    }
+    //}
 
 }
