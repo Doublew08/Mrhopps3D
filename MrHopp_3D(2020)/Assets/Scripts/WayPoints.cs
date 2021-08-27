@@ -12,6 +12,7 @@ public class WayPoints : MonoBehaviour
     private Animator RabbitAnimator;
     private float rotationSpeed = 2.0f;
     private RabbitPlace1 place1;
+    
 
 
 
@@ -22,14 +23,17 @@ public class WayPoints : MonoBehaviour
     public  float movementSpeed = 15.0f;
     public float LookR=121;
     public bool CanMove =false;
-
+    public GameObject Place1;
+    public GameObject Head;
+    
     void Start()
     {
         lastWaypointIndex = waypoints.Count - 1;
         targetWaypoint = waypoints[targetWaypointIndex];
         RabbitAnimator = GetComponent<Animator>();
+        Debug.Log(Vector3.Distance(transform.position, Place1.transform.position));
         place1 = FindObjectOfType<RabbitPlace1>();
-       
+      
        
     }
 
@@ -42,18 +46,25 @@ public class WayPoints : MonoBehaviour
        // {*/
             float movementStep = movementSpeed * Time.deltaTime;
             float rotationStep = rotationSpeed * Time.deltaTime;
-            /*Vector3 directionToTarget = targetWaypoint.position - transform.position;
-            Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);*/
-            //transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep);
+            Vector3 directionToTarget = targetWaypoint.position - transform.position;
+            Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep);
             Debug.DrawRay(transform.position, transform.forward * 50f, Color.green, 0f);
-            //Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
+            Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
             float distance = Vector3.Distance(transform.position, targetWaypoint.position);
             CheckDistanceToWaypoint(distance);
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementStep);
-            RabbitAnimator.SetFloat("Walk", 0.2f);
+            RabbitAnimator.SetFloat("Walk", 0.2F);
+            
+        if (Vector3.Distance(transform.position, Place1.transform.position) <= 0)
+        {
+            Debug.Log("yes");
+            Head.transform.Rotate(0f, 180f, 0f);
+        }
         //}                          
     }
-   
+
+    
 
 
 
