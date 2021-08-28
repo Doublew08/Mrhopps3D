@@ -61,7 +61,7 @@ public class WayPoints : MonoBehaviour
         {
             Debug.Log("Place1");
             Head.transform.Rotate(0f, 180f, 0f);
-            Eyes.transform.Rotate(0f, 180f, 0f);
+            
         }
         if (Vector3.Distance(transform.position, Place2.transform.position) <= 0)
         {
