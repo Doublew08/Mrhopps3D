@@ -1946,7 +1946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab54ea52cf91a8d4c822af76dc0453a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StaminaSlider: {fileID: 0}
+  StaminaSlider: {fileID: 294442574}
   Stamina: 0
 --- !u!1001 &528154291
 PrefabInstance:
@@ -4939,7 +4939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab54ea52cf91a8d4c822af76dc0453a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StaminaSlider: {fileID: 0}
+  StaminaSlider: {fileID: 294442574}
   Stamina: 0
 --- !u!114 &1959664195
 MonoBehaviour:

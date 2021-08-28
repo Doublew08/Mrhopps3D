@@ -31,7 +31,7 @@ public class WayPoints : MonoBehaviour
         lastWaypointIndex = waypoints.Count - 1;
         targetWaypoint = waypoints[targetWaypointIndex];
         RabbitAnimator = GetComponent<Animator>();
-        Debug.Log(Vector3.Distance(transform.position, Place1.transform.position));
+        //Debug.Log(Vector3.Distance(transform.position, Place1.transform.position));
         place1 = FindObjectOfType<RabbitPlace1>();
       
        
