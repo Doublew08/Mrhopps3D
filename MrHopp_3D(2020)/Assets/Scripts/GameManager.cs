@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     public bool DestroyCassette;
     public GameObject CanvasTape;
     public GameObject CanvasTapesPrefab;
-    public string Cassetteint;
+    public int Cassetteint;
     
 
 
@@ -146,13 +146,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Cassetteint = CanvasTapes.TapesCollected.ToString();
         
         
             
                 if (GameObject.FindGameObjectWithTag("Cassette"))
                 {
-                    if (GameObject.FindGameObjectWithTag("Cassette").name != (CanvasTapes.TapesCollected).ToString())
+                    if (GameObject.FindGameObjectWithTag("Cassette").name != (Cassetteint).ToString())
                     {
                         GameObject.FindGameObjectWithTag("Cassette").SetActive(false);
                     }
@@ -168,6 +167,7 @@ public class GameManager : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("Recorder"));
                 Destroy(GameObject.FindGameObjectWithTag("TapeImage"));
                 Destroy(GameObject.FindGameObjectWithTag("TapeHand"));
+
             }
         }
         currentScene = SceneManager.GetActiveScene();

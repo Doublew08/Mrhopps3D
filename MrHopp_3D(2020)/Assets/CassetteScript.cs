@@ -72,10 +72,10 @@ public class CassetteScript : MonoBehaviour
 
                     playerMovement.canmove = true;
                     SeeingTapeImage = false;
-                   // CanvasActive = true;
-
-                    GameManager.instance.DestroyCassette = true;
-                    
+                    // CanvasActive = true;
+                    GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+                    gameManager.DestroyCassette = true;
+                    gameManager.Cassetteint++;
                 }
             }
             else

@@ -7,8 +7,8 @@ public class CanvasTapes : MonoBehaviour
 {
     public static CanvasTapes instance;
     public Text TextTapes;
-    public int TapesCollectedInspector;
-    public static int TapesCollected = 0;
+    public static int TapesCollected;
+    public int TapesCollectedInspector = 0;
     public Text Task;
     // Start is called before the first frame update
     void Start()
@@ -37,8 +37,8 @@ public class CanvasTapes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextTapes.text = (TapesCollected-1).ToString() + "/6";
-        TapesCollectedInspector = TapesCollected;
+        TextTapes.text = (TapesCollected).ToString() + "/6";
+        TapesCollected = TapesCollectedInspector;
     }
     IEnumerator EndTask()
     {
