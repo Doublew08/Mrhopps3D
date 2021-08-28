@@ -24,16 +24,17 @@ public class WayPoints : MonoBehaviour
     public float LookR=121;
     public bool CanMove =false;
     public GameObject Place1;
+    public GameObject Place2;
     public GameObject Head;
+    public GameObject Eyes;
     
     void Start()
     {
         lastWaypointIndex = waypoints.Count - 1;
         targetWaypoint = waypoints[targetWaypointIndex];
-        RabbitAnimator = GetComponent<Animator>();
-        //Debug.Log(Vector3.Distance(transform.position, Place1.transform.position));
+        RabbitAnimator = GetComponent<Animator>();        
         place1 = FindObjectOfType<RabbitPlace1>();
-      
+        
        
     }
 
@@ -58,8 +59,15 @@ public class WayPoints : MonoBehaviour
             
         if (Vector3.Distance(transform.position, Place1.transform.position) <= 0)
         {
-            Debug.Log("yes");
+            Debug.Log("Place1");
             Head.transform.Rotate(0f, 180f, 0f);
+            Eyes.transform.Rotate(0f, 180f, 0f);
+        }
+        if (Vector3.Distance(transform.position, Place2.transform.position) <= 0)
+        {
+            Debug.Log("Place2");
+            Head.transform.Rotate(0f, -180f, 0f);
+            Eyes.transform.Rotate(0f, -180f, 0f);
         }
         //}                          
     }

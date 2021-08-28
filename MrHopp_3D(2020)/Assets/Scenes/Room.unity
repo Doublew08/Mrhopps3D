@@ -945,8 +945,8 @@ GameObject:
   - component: {fileID: 414125973}
   - component: {fileID: 414125972}
   m_Layer: 0
-  m_Name: WayPoint1
-  m_TagString: Untagged
+  m_Name: Place2
+  m_TagString: Place2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1502,6 +1502,14 @@ PrefabInstance:
       propertyPath: Head
       value: 
       objectReference: {fileID: 470659831}
+    - target: {fileID: 858490836, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
+      propertyPath: Place2
+      value: 
+      objectReference: {fileID: 414125971}
+    - target: {fileID: 858490836, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
+      propertyPath: Eyes
+      value: 
+      objectReference: {fileID: 1767909025}
     - target: {fileID: 2013076062, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
       propertyPath: Panel
       value: 
@@ -1528,7 +1536,7 @@ PrefabInstance:
     - target: {fileID: 390223802025109854, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -256.3
+      value: -198.5
       objectReference: {fileID: 0}
     - target: {fileID: 390223802025109854, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
         type: 3}
@@ -1538,7 +1546,7 @@ PrefabInstance:
     - target: {fileID: 390223802025109854, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 245.28235
+      value: 235.1
       objectReference: {fileID: 0}
     - target: {fileID: 390223802025109854, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
         type: 3}
@@ -3005,7 +3013,7 @@ GameObject:
   - component: {fileID: 657050962}
   - component: {fileID: 657050966}
   m_Layer: 0
-  m_Name: WayPoint1 (1)
+  m_Name: Place1
   m_TagString: Place1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1477,7 +1477,7 @@ GameObject:
   - component: {fileID: 584318114}
   - component: {fileID: 584318113}
   m_Layer: 0
-  m_Name: Place1 (1)
+  m_Name: Place1
   m_TagString: Place1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2622,6 +2622,14 @@ PrefabInstance:
       propertyPath: Head
       value: 
       objectReference: {fileID: 969137419}
+    - target: {fileID: 858490836, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
+      propertyPath: Place2
+      value: 
+      objectReference: {fileID: 1382170147}
+    - target: {fileID: 858490836, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
+      propertyPath: Eyes
+      value: 
+      objectReference: {fileID: 969137420}
     - target: {fileID: 2013076062, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
       propertyPath: Panel
       value: 
@@ -2736,6 +2744,12 @@ PrefabInstance:
 --- !u!1 &969137419 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4492170996570838912, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 969137418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &969137420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 415857532688814739, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
     type: 3}
   m_PrefabInstance: {fileID: 969137418}
   m_PrefabAsset: {fileID: 0}
@@ -3533,8 +3547,8 @@ GameObject:
   - component: {fileID: 1382170149}
   - component: {fileID: 1382170148}
   m_Layer: 0
-  m_Name: Place1
-  m_TagString: Untagged
+  m_Name: Place2
+  m_TagString: Place2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
