@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 45048977}
   m_Layer: 0
   m_Name: RabbitPlace1 (1)
-  m_TagString: Untagged
+  m_TagString: Place2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3122,6 +3122,14 @@ PrefabInstance:
       propertyPath: Head
       value: 
       objectReference: {fileID: 680381194}
+    - target: {fileID: 858490836, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
+      propertyPath: Place2
+      value: 
+      objectReference: {fileID: 45048976}
+    - target: {fileID: 858490836, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
+      propertyPath: Eyes
+      value: 
+      objectReference: {fileID: 680381195}
     - target: {fileID: 2013076062, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
       propertyPath: Panel
       value: 
@@ -3247,6 +3255,12 @@ GameObject:
 --- !u!1 &680381194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4492170996570838912, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 680381192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &680381195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 415857532688814739, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
     type: 3}
   m_PrefabInstance: {fileID: 680381192}
   m_PrefabAsset: {fileID: 0}
