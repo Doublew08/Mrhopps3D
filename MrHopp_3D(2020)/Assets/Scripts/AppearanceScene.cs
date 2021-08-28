@@ -18,8 +18,10 @@ public  class AppearanceScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       GameManager.instance.shown1stapp1 = firstapp;
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
+        gameManager.shown1stapp1 = firstapp;
+        
         if (gameManager.RabbitExists)
         {
             Babbit.SetActive(true);
