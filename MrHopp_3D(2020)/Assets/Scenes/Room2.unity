@@ -175,7 +175,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45048976}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3114,6 +3114,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 858490836, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
+      propertyPath: Place1
+      value: 
+      objectReference: {fileID: 1593706067}
+    - target: {fileID: 858490836, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
+      propertyPath: Head
+      value: 
+      objectReference: {fileID: 680381194}
     - target: {fileID: 2013076062, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
       propertyPath: Panel
       value: 
@@ -3233,6 +3241,12 @@ PrefabInstance:
 --- !u!1 &680381193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1018247644170662884, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 680381192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &680381194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4492170996570838912, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
     type: 3}
   m_PrefabInstance: {fileID: 680381192}
   m_PrefabAsset: {fileID: 0}
@@ -5995,7 +6009,7 @@ GameObject:
   - component: {fileID: 1593706068}
   m_Layer: 0
   m_Name: RabbitPlace1
-  m_TagString: Untagged
+  m_TagString: Place1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6032,7 +6046,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593706067}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
