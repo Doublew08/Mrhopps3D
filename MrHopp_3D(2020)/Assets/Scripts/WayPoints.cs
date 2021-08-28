@@ -67,7 +67,7 @@ public class WayPoints : MonoBehaviour
         {
             Debug.Log("Place2");
             Head.transform.Rotate(0f, -180f, 0f);
-            Eyes.transform.Rotate(0f, -180f, 0f);
+          
         }
         //}                          
     }
