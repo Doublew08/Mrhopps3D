@@ -47,35 +47,41 @@ public class WayPoints : MonoBehaviour
        // {*/
             float movementStep = movementSpeed * Time.deltaTime;
             float rotationStep = rotationSpeed * Time.deltaTime;
+           //Rotate The Rabbit When he reach place 2
             Vector3 directionToTarget = targetWaypoint.position - transform.position;
             Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep);
             Debug.DrawRay(transform.position, transform.forward * 50f, Color.green, 0f);
             Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
+           //Make Rabbit Walk
             float distance = Vector3.Distance(transform.position, targetWaypoint.position);
             CheckDistanceToWaypoint(distance);
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementStep);
+            //Run The RabbitAnimation
             RabbitAnimator.SetFloat("Walk", 0.2F);
+           
+
+           //Check if Rabbit reach Palce1
+           if (Vector3.Distance(transform.position, Place1.transform.position) <= 0)
+           {
+             Debug.Log("Place1");
+             Head.transform.Rotate(0f, 180f, 0f);
             
-        if (Vector3.Distance(transform.position, Place1.transform.position) <= 0)
-        {
-            Debug.Log("Place1");
-            Head.transform.Rotate(0f, 180f, 0f);
-            
-        }
-        if (Vector3.Distance(transform.position, Place2.transform.position) <= 0)
-        {
-            Debug.Log("Place2");
-            Head.transform.Rotate(0f, -180f, 0f);
+           }
+           //Check if Rabbit reach place2
+           if (Vector3.Distance(transform.position, Place2.transform.position) <= 0)
+           {
+             Debug.Log("Place2");
+             Head.transform.Rotate(0f, -180f, 0f);
           
-        }
+           }
         //}                          
     }
 
     
 
 
-
+    //Check the distance of waypoint(from place 1 to 2 )
     void CheckDistanceToWaypoint(float currentDistance)
     {
         if (currentDistance <= minDistance)
@@ -97,17 +103,6 @@ public class WayPoints : MonoBehaviour
         targetWaypoint = waypoints[targetWaypointIndex];
     }
 
-   /* IEnumerator Walking()
-    {
-        /*RabbitAnimator.SetFloat("Walk",0.2f);
-        yield return new WaitForSeconds(15F);
-        RabbitAnimator.SetFloat("Walk", 0.0f);
-        RabbitAnimator.SetBool("WalkBack", true);
-       /* yield return new WaitForSeconds(14f);
-        RabbitAnimator.SetBool("WalkBack", false);
-        RabbitAnimator.SetFloat("Walk", 0.2f);*/
-
-
-    //}
+   
 
 }
