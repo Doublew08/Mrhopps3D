@@ -13,6 +13,7 @@ public class StaminaScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Stamina = MaxStamina;
         Player = FindObjectOfType<PlayerMovement>();
     }
@@ -20,8 +21,10 @@ public class StaminaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Make sure if Stamina is less than the MaxStamina
         if (Stamina < MaxStamina)
         {
+            //then increase the stamina
             IncreaseTheStamina();
         }
     }

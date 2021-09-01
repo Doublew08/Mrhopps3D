@@ -31,6 +31,7 @@ public class LoadSceneAgainInRoof : MonoBehaviour
             {
                 //Start the coroutine 
                 Debug.Log("I catch you");
+                //The photo of the Rabbit Will Appear
                 Panel.SetActive(true);
                 StartCoroutine(RabbitCatchThePlayer());
 

@@ -37,30 +37,39 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void move()
-    {
+    { 
+        //make sure if player on the ground
         if (controller.isGrounded)
         {
+            //put the axises(horizontal and vertical in movedir vector)
             movedire = new Vector3(Input.GetAxis("Horizontal"), .0f, Input.GetAxis("Vertical"));
+            //put speed to movedir and direction
             movedire = movedire * speed;
             movedire = transform.TransformDirection(movedire);
+            //check if user press jump button
             if (Input.GetButton("Jump"))
             {
+                //make the player jump
                 movedire.y = jump;
             }
         }
-
+        //Check if the User press LeftShift
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            //Increse the Speed and the stamina will decrease
             speed = 70f;
             PlayerStamina.DecreaseInStamina(0.5f);
         }
+        //Check if the player dont press LeftShift
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
+            //Decrease the speed and the stamina will not be decreased
             speed = 40f;
             PlayerStamina.DecreaseInStamina(0.0f);
         }
-       
-         movedire.y = movedire.y - gravity  * Time.deltaTime;
+        //The gravity will decrease jump speed until the player be on the ground
+        movedire.y = movedire.y - gravity  * Time.deltaTime;
+        //make the player move
         controller.Move(movedire * Time.deltaTime);
     }
 }
