@@ -28,20 +28,26 @@ public class StaminaScript : MonoBehaviour
             IncreaseTheStamina();
         }
     }
+    //This method to decrease the stamina
     public void DecreaseInStamina(float amount)
     {
+        //Decrese the double amount
         Stamina = Stamina - amount*2;
+        //and decrease the value of stamina in the inspector
         StaminaSlider.value = Stamina;
+        //check if the stamina is less than 0
         if (Stamina < 0)
         {
+            //then make it 0 and make the speed of the player 40(make him slow)
             Stamina = 0;
             Debug.Log("You dont have enough stamina");
             Player.speed = 40f;   
         }
     }
+    //this method to increase the stamina
     void IncreaseTheStamina()
     {
-        
+        //increse the stamina by time multiplied in 4 
         Stamina = Stamina +Time.deltaTime*4 ;
         StaminaSlider.value = StaminaSlider.value + Time.deltaTime * 4;
     }
