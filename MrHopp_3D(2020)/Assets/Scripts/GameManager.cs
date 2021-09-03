@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     public GameObject CanvasTape;
     public GameObject CanvasTapesPrefab;
     public int Cassetteint;
+    public int destroyCassetteNumber;
     
 
 
@@ -146,7 +147,16 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        for(destroyCassetteNumber = destroyCassetteNumber;destroyCassetteNumber > 0; destroyCassetteNumber--)
+        {
+            if (GameObject.FindGameObjectWithTag("Cassette").name == destroyCassetteNumber.ToString())
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Cassette").GetComponent<Cassette_Collect>().HandImage);
+                Destroy(GameObject.FindGameObjectWithTag("Cassette").GetComponent<Cassette_Collect>().TapeText);
+                Destroy(GameObject.FindGameObjectWithTag("Cassette"));
+
+            }
+        }
         
             
                 if (GameObject.FindGameObjectWithTag("Cassette"))
@@ -156,8 +166,7 @@ public class GameManager : MonoBehaviour
                         GameObject.FindGameObjectWithTag("Cassette").SetActive(false);
                     }
                 }
-        
-        
+
 
         if (DestroyCassette)
         {
