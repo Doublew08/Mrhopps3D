@@ -21,12 +21,17 @@ public class LoadSceneAgainInRoof2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //define the ray
         RaycastHit Ray;
+        //make if the ray hit the (Something)
         if (Physics.Raycast(transform.position, -transform.up, out Ray, Mathf.Infinity))
         {
+            //make sure if the ray hit the player
             if (Ray.collider.tag == "Player")
             {
+                //Start the coroutine
                 Debug.Log("I catch you");
+                //The photo of the Rabbit Will Appear
                 Panel.SetActive(true);
                 StartCoroutine(RabbitCatchThePlayer());
 
@@ -39,6 +44,7 @@ public class LoadSceneAgainInRoof2 : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, -transform.up * 1000);
     }
+    //The scene will load again if (ROOF2)
     IEnumerator RabbitCatchThePlayer()
     {
         yield return new WaitForSeconds(3);
