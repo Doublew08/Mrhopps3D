@@ -30,6 +30,7 @@ public class CamF : MonoBehaviour
         PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
        // PlayerMovement2 playerMovement2 = Player.GetComponent<PlayerMovement2>();
 
+        //make sure if player canmove=true , he can rotate camera 
         if (playerMovement.canmove)
         {
             RotateCam();
@@ -38,6 +39,7 @@ public class CamF : MonoBehaviour
        
 
     }
+    //This Method to rotate the player's camera in x and y axes 
     void RotateCam()
     {
         MouseX = Input.GetAxis("Mouse X") * MouseSensevetity;
