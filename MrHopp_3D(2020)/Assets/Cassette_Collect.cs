@@ -15,6 +15,13 @@ public class Cassette_Collect : MonoBehaviour
     public GameObject TapeText;
     public bool SeeingTapeImage;
 
+    public enum Axis
+    {
+        X,
+        Z
+    }
+    public Axis axis;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,34 +42,76 @@ public class Cassette_Collect : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             Transform Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            if (beg_door < Player.position.x && Player.position.x < End_door)
+            switch (axis)
             {
-                HandImage.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    /*Destroy(gameObject);
-                    Destroy(Image);*/
-                    SeeingTapeImage = true;
+                case Axis.X:
+                    beg_door = transform.position.x - (transform.localScale.x / 2);
+                    End_door = transform.position.x + (transform.localScale.x / 2);
+                    if (beg_door < Player.position.x && Player.position.x < End_door)
+                    {
+                        HandImage.SetActive(true);
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            /*Destroy(gameObject);
+                            Destroy(Image);*/
+                            SeeingTapeImage = true;
 
-                    TapeText.SetActive(true);
-                    PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
+                            TapeText.SetActive(true);
+                            PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
 
-                    playerMovement.canmove = false;
+                            playerMovement.canmove = false;
 
-                }
-                if (SeeingTapeImage && Input.GetKeyDown(KeyCode.Q))
-                {
-                    TapeText.SetActive(false);
-                    PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
+                        }
+                        if (SeeingTapeImage && Input.GetKeyDown(KeyCode.Q))
+                        {
+                            TapeText.SetActive(false);
+                            PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
 
-                    playerMovement.canmove = true;
-                    SeeingTapeImage = false;
-                    GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-                    gameManager.Cassetteint++;
-                    CanvasTapes.TapesCollected++;
-                    gameManager.destroyCassetteNumber++;
-                }
+                            playerMovement.canmove = true;
+                            SeeingTapeImage = false;
+                            GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+                            gameManager.Cassetteint++;
+                            CanvasTapes.TapesCollected++;
+                            gameManager.destroyCassetteNumber++;
+                        }
+                    }
+
+                    break;
+                case Axis.Z:
+                    beg_door = transform.position.z - (transform.localScale.z / 2);
+                    End_door = transform.position.z + (transform.localScale.z / 2);
+                    if (beg_door < Player.position.z && Player.position.z < End_door)
+                    {
+                        HandImage.SetActive(true);
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            /*Destroy(gameObject);
+                            Destroy(Image);*/
+                            SeeingTapeImage = true;
+
+                            TapeText.SetActive(true);
+                            PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
+
+                            playerMovement.canmove = false;
+
+                        }
+                        if (SeeingTapeImage && Input.GetKeyDown(KeyCode.Q))
+                        {
+                            TapeText.SetActive(false);
+                            PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
+
+                            playerMovement.canmove = true;
+                            SeeingTapeImage = false;
+                            GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+                            gameManager.Cassetteint++;
+                            CanvasTapes.TapesCollected++;
+                            gameManager.destroyCassetteNumber++;
+                        }
+                    }
+
+                    break;
             }
+            
 
         }
 
