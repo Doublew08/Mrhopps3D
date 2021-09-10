@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     public GameObject CanvasTapesPrefab;
     public int Cassetteint;
     public int destroyCassetteNumber;
+    public bool appscenestop;
     
 
 
@@ -121,16 +122,18 @@ public class GameManager : MonoBehaviour
 
 
     }
-   public void appincrease()
+    public void appincrease()
     {
-        if (shown1stapp1 == 1)
-        {
-            Debug.Log("app scene should run");
-            RabbitExists = true;
-            AppScene = false;
-            Appscene();
-            shown1stapp1++;
-        }
+        
+            if (shown1stapp1 == 1)
+            {
+                Debug.Log("app scene should run");
+                RabbitExists = true;
+                AppScene = false;
+                Appscene();
+                shown1stapp1++;
+            }
+        
     }
   void DO (bool doing,string enumerator)
     {
@@ -181,7 +184,10 @@ public class GameManager : MonoBehaviour
         }
         currentScene = SceneManager.GetActiveScene();
         currentSceneint = currentScene.buildIndex;
-        appincrease();
+        if (!RabbitExists)
+        {
+            appincrease();
+        }
         if (!RabbitExists)
         {
             if (GameObject.FindGameObjectWithTag("Rabbit")) { 
@@ -208,7 +214,6 @@ public class GameManager : MonoBehaviour
         AdjustPlayerSpawn(2, 3, "PlayerCollector", 2);
         AdjustPlayerSpawn(3, 2, "PlayerCollector2", 0);
         AdjustPlayerSpawn(3, 9, "PlayerCollector2", 1);
-        AdjustPlayerSpawn(3, 3, "PlayerCollector2", 2);
         AdjustPlayerSpawn(4, 3, "PlayerCollector3", 0);
         AdjustPlayerSpawn(4, 4, "PlayerCollector3", 1);
         AdjustPlayerSpawn(5, 4, "PlayerCollector4", 0);
@@ -218,6 +223,7 @@ public class GameManager : MonoBehaviour
         AdjustPlayerSpawn(5, 6, "PlayerCollector4", 1);
         AdjustPlayerSpawn(4, 5, "PlayerCollector3", 1);
         AdjustPlayerSpawn(3, 5, "PlayerCollector2", 2);
+        AdjustPlayerSpawn(3, 3, "PlayerCollector2", 2);
 
 
 

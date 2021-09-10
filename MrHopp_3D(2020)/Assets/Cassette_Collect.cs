@@ -75,6 +75,10 @@ public class Cassette_Collect : MonoBehaviour
                             gameManager.destroyCassetteNumber++;
                         }
                     }
+                    else
+                    {
+                        HandImage.SetActive(false);
+                    }
 
                     break;
                 case Axis.Z:
@@ -107,6 +111,10 @@ public class Cassette_Collect : MonoBehaviour
                             CanvasTapes.TapesCollected++;
                             gameManager.destroyCassetteNumber++;
                         }
+                    }
+                    else
+                    {
+                        HandImage.SetActive(false);
                     }
 
                     break;
