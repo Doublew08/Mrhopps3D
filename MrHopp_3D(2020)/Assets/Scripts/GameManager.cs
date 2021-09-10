@@ -150,9 +150,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        for(destroyCassetteNumber = destroyCassetteNumber;destroyCassetteNumber > 0; destroyCassetteNumber--)
+        for(int i = destroyCassetteNumber;i > 0; i--)
         {
-            if (GameObject.FindGameObjectWithTag("Cassette").name == destroyCassetteNumber.ToString())
+            if (GameObject.FindGameObjectWithTag("Cassette").name == i.ToString())
             {
                 Destroy(GameObject.FindGameObjectWithTag("Cassette").GetComponent<Cassette_Collect>().HandImage);
                 Destroy(GameObject.FindGameObjectWithTag("Cassette").GetComponent<Cassette_Collect>().TapeText);
@@ -222,20 +222,24 @@ public class GameManager : MonoBehaviour
         AdjustPlayerSpawn(6, 7, "PlayerCollector5", 1);
         AdjustPlayerSpawn(5, 6, "PlayerCollector4", 1);
         AdjustPlayerSpawn(4, 5, "PlayerCollector3", 1);
-        AdjustPlayerSpawn(3, 5, "PlayerCollector2", 2);
-        AdjustPlayerSpawn(3, 3, "PlayerCollector2", 2);
-
-
-
+        AdjustPlayerSpawn(3, 4, "PlayerCollector2", 2);
+        //AdjustPlayerSpawn(3, 5, "PlayerCollector2", 2);
+        //AdjustPlayerSpawn(3, 3, "PlayerCollector2", 2);
 
     }
+    
 
     public void AdjustPlayerSpawn(int currentSint,int PrevSint,string PlayerController,int activator)
     {
         if (currentSceneint == currentSint && PrevSceneint == PrevSint)
         {
             PlayerActivator playerActivator = GameObject.Find(PlayerController).GetComponent<PlayerActivator>();
-            playerActivator.Activate[activator] = true;
+            
+            
+                playerActivator.Activate[activator] = true;
+            
+            Debug.Log(currentSceneint + "_" + PrevSceneint);
+
 
         }
         else
