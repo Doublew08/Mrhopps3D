@@ -14,6 +14,7 @@ TagManager:
   - Appear
   - CanvasTapes
   - Place2
+  - SpiderHopps
   layers:
   - Default
   - TransparentFX
