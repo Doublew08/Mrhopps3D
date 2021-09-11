@@ -9,7 +9,6 @@ public class RoomMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -17,12 +16,15 @@ public class RoomMover : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        gameManager.PrevScene = SceneManager.GetActiveScene();
-        gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
-        SceneManager.LoadSceneAsync(Room2bemoved2);
+        if (collider.gameObject.tag == "Player") {
+            GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            gameManager.PrevScene = SceneManager.GetActiveScene();
+            gameManager.PrevSceneint = gameManager.PrevScene.buildIndex;
+            SceneManager.LoadSceneAsync(Room2bemoved2);
+        } 
     }
+
 
 }

@@ -10,6 +10,7 @@ public class CanvasTapes : MonoBehaviour
     public static int TapesCollected;
     public int TapesCollectedInspector = 0;
     public Text Task;
+   public GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +38,7 @@ public class CanvasTapes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextTapes.text = (TapesCollected).ToString() + "/6";
+        TextTapes.text = (gameManager.destroyCassetteNumber).ToString() + "/6";
         TapesCollected = TapesCollectedInspector;
     }
     IEnumerator EndTask()
