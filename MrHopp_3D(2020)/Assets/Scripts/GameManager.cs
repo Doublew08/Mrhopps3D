@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     public int shown1stapp1;
     public bool MomScene = true;
     public bool HaveKey;
+    public bool HaveEndKey;
     public bool DestroyCassette;
     public GameObject CanvasTape;
     public GameObject CanvasTapesPrefab;

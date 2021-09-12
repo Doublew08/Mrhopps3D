@@ -1249,7 +1249,7 @@ MonoBehaviour:
   HandImage: {fileID: 172282785}
   TapeText: {fileID: 172282783}
   SeeingTapeImage: 0
-  axis: 0
+  axis: 1
 --- !u!1001 &534307559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4271,16 +4271,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 1813073405}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 5.56
+  m_Radius: 8.4
   m_Speed: 300
-  m_Acceleration: 8
+  m_Acceleration: 30
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 11.32
+  m_Height: 9.25
   m_BaseOffset: 0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -4296,7 +4296,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 10.94
-  m_Radius: 5.7
+  m_Radius: 7.8
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -4315,6 +4315,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 211902372}
+--- !u!95 &1813073409
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813073405}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 362081d099eba164baa2f4e439359678, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1842889926 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 969e14f1112395b4b816c3c2606022bf,
