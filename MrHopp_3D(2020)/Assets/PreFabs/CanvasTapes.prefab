@@ -192,7 +192,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextTapes: {fileID: 4015825600988898424}
+  TapesCollectedInspector: 0
   Task: {fileID: 7050483971597307747}
+  gameManager: {fileID: 0}
+  KeyTask: {fileID: 9203266530980157878, guid: 56299f3c75df06f49b30c70c6abf2fca, type: 3}
 --- !u!1 &4015825600988898426
 GameObject:
   m_ObjectHideFlags: 0
