@@ -1938,6 +1938,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider Hopps
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a3caf446a61eb36489f6f6de9fe26428,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a3caf446a61eb36489f6f6de9fe26428,
+        type: 3}
+      propertyPath: m_TagString
+      value: SpiderHopps
+      objectReference: {fileID: 0}
     - target: {fileID: 1144136789182462599, guid: a3caf446a61eb36489f6f6de9fe26428,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

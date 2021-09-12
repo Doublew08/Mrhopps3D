@@ -52,7 +52,9 @@ public class GameManager : MonoBehaviour
     public int Cassetteint;
     public int destroyCassetteNumber;
     public bool appscenestop;
-    
+    public bool lastime = true;
+
+
 
 
 
@@ -150,17 +152,19 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        for(int i = destroyCassetteNumber;i > 0; i--)
+        for (int i = destroyCassetteNumber; i > 0; i--)
         {
-            if (GameObject.FindGameObjectWithTag("Cassette").name == i.ToString())
+            if (GameObject.FindGameObjectWithTag("Cassette"))
             {
-                Destroy(GameObject.FindGameObjectWithTag("Cassette").GetComponent<Cassette_Collect>().HandImage);
-                Destroy(GameObject.FindGameObjectWithTag("Cassette").GetComponent<Cassette_Collect>().TapeText);
-                Destroy(GameObject.FindGameObjectWithTag("Cassette"));
+                if (GameObject.FindGameObjectWithTag("Cassette").name == i.ToString())
+                {
+                    Destroy(GameObject.FindGameObjectWithTag("Cassette").GetComponent<Cassette_Collect>().HandImage);
+                    Destroy(GameObject.FindGameObjectWithTag("Cassette").GetComponent<Cassette_Collect>().TapeText);
+                    Destroy(GameObject.FindGameObjectWithTag("Cassette"));
 
+                }
             }
         }
-        
             
                 if (GameObject.FindGameObjectWithTag("Cassette"))
                 {
