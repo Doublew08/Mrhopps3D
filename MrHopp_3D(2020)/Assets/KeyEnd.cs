@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyEnd : MonoBehaviour
+public partial class KeyEnd : MonoBehaviour
 {
     public GameObject Image;
     float beg_door;
     float End_door;
     public GameObject Canvas_Endkey;
+    public enum Case
+    {
+        check,
+        checkdn
+    }
+    public Case @case;
+
     // Start is called before the first frame update
+
     void Start()
     {
         beg_door = transform.position.x - (transform.localScale.x / 2);
@@ -23,21 +31,37 @@ public class KeyEnd : MonoBehaviour
             Transform Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
             GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-            if (beg_door < Player.position.x && Player.position.x < End_door && gameManager.destroyCassetteNumber == 6)
+            switch (@case)
             {
-                Image.SetActive(true);
-                if (Input.GetKey(KeyCode.E))
-                {
-                    GameObject CanvasEndkey = (GameObject)Instantiate(Canvas_Endkey);
+                case Case.check:
+                    
 
-                    //do courtine
-                    gameManager.HaveEndKey = true;
+                    if (beg_door < Player.position.x && Player.position.x < End_door && gameManager.destroyCassetteNumber == 6)
+                    {
+                        Image.SetActive(true);
+                        if (Input.GetKey(KeyCode.E))
+                        {
+                            GameObject CanvasEndkey = (GameObject)Instantiate(Canvas_Endkey);
 
-                }
-            }
-            else
-            {
-                Image.SetActive(false);
+                            //do courtine
+                            gameManager.HaveEndKey = true;
+
+                        }
+                    }
+                    else
+                    {
+                        Image.SetActive(false);
+                    }
+                    break;
+                case Case.checkdn:
+                    Image.SetActive(false);
+                    if(gameObject.transform.position != new Vector3(-215 , transform.position.y,transform.position.z))
+                    {
+                        transform.position = new Vector3(-215, transform.position.y,transform.position.z);
+                    }
+
+
+                    break;
             }
         }
     }

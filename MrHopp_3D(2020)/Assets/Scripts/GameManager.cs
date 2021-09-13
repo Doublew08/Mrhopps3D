@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public int destroyCassetteNumber;
     public bool appscenestop;
     public bool lastime = true;
+    public bool checkedvase;
 
 
 
@@ -153,6 +154,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (checkedvase)
+        {
+           GameObject.Find("vase_key").GetComponent<KeyEnd>().@case = KeyEnd.Case.checkdn;
+        }
         for (int i = destroyCassetteNumber; i > 0; i--)
         {
             if (GameObject.FindGameObjectWithTag("Cassette"))
