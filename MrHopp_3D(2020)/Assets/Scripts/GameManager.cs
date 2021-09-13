@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     public bool appscenestop;
     public bool lastime = true;
     public bool checkedvase;
+    public bool call_done;
 
 
 
@@ -154,6 +155,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if(destroyCassetteNumber == 4 && !call_done)
+        {
+            GameObject.Find("SimpleRotaryPhone").GetComponent<PhoneCall>().call = PhoneCall.Call.NDone;
+
+        }
+        if (call_done)
+        {
+            GameObject.Find("SimpleRotaryPhone").GetComponent<PhoneCall>().call = PhoneCall.Call.Done;
+        }
         if (checkedvase)
         {
            GameObject.Find("vase_key").GetComponent<KeyEnd>().@case = KeyEnd.Case.checkdn;
