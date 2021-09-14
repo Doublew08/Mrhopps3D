@@ -1637,6 +1637,11 @@ PrefabInstance:
       propertyPath: jump
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1167185438169322820, guid: d8f983f14f1a4ea40b08d6ade05a5333,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 636650351}
     - target: {fileID: 1167185438169322822, guid: d8f983f14f1a4ea40b08d6ade05a5333,
         type: 3}
       propertyPath: m_LocalPosition.x
