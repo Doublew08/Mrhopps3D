@@ -1936,7 +1936,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a3caf446a61eb36489f6f6de9fe26428,
         type: 3}
       propertyPath: m_Name
-      value: Spider Hopps
+      value: SpiderHopps
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a3caf446a61eb36489f6f6de9fe26428,
         type: 3}
@@ -2857,7 +2857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda02514318dee94fa81ecaa1011cbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hand: {fileID: 0}
+  Hand: {fileID: 563973831572559077, guid: baa13846109abae45bdc28f03f78e5d2, type: 3}
 --- !u!1 &1373440325
 GameObject:
   m_ObjectHideFlags: 0

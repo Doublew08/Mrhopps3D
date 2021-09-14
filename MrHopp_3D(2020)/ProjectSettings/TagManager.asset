@@ -15,6 +15,7 @@ TagManager:
   - CanvasTapes
   - Place2
   - SpiderHopps
+  - Phone
   layers:
   - Default
   - TransparentFX

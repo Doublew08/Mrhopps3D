@@ -8,6 +8,7 @@ public class PhoneCall : MonoBehaviour
     float beg_door;
     float End_door;
     public GameObject Hand;
+    public GameObject MarkCALL;
     public enum Call
     {
         NDone,
@@ -35,7 +36,7 @@ public class PhoneCall : MonoBehaviour
             {
                 case Call.NDone:
 
-                    if (gameManager.destroyCassetteNumber == 4 && Player.position.x > 605)
+                    if (gameManager.destroyCassetteNumber == 4 && Player.position.x < 120)
                     {
                         //run sound
                         if (beg_door < Player.position.x && Player.position.x < End_door)
@@ -44,8 +45,8 @@ public class PhoneCall : MonoBehaviour
 
                             if (Input.GetKey(KeyCode.E) )
                             {
-                                // run call                      
-                                gameManager.call_done = true;
+                                // run call
+                                StartCoroutine("MarkCallCo");
 
                             }
 
@@ -79,5 +80,16 @@ public class PhoneCall : MonoBehaviour
         } 
         
     } 
-    
+
+IEnumerator MarkCallCo()
+    {
+        Debug.Log("Calling");
+        GameObject callmark = (GameObject)Instantiate(MarkCALL, GameObject.FindGameObjectWithTag("Canvas").transform);
+        yield return new WaitForSeconds(8);
+        callmark.SetActive(false);
+        Debug.Log("waited");
+        gameManager.call_done = true;
+        yield break;
+    }    
 } 
+

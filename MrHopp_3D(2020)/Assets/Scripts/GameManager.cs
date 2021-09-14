@@ -155,14 +155,36 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(destroyCassetteNumber == 4 && !call_done)
+        if(currentSceneint == 9 )
         {
-            GameObject.Find("SimpleRotaryPhone").GetComponent<PhoneCall>().call = PhoneCall.Call.NDone;
-
+            if (lastime && destroyCassetteNumber == 5)
+            {
+                GameObject.Find("SpiderHopps").SetActive(true);
+                lastime = false;
+            }
+            else
+            {
+                if (GameObject.Find("SpiderHopps"))
+                {
+                    GameObject.Find("SpiderHopps").SetActive(false);
+                }
+            }
+        }
+        if (currentSceneint == 4)
+        {
+            if (destroyCassetteNumber == 4 && !call_done)
+            {
+                if (GameObject.FindGameObjectWithTag("Phone"))
+                {
+                    GameObject.FindGameObjectWithTag("Phone").GetComponent<PhoneCall>().call = PhoneCall.Call.NDone;
+                }
+            }
         }
         if (call_done)
         {
-            GameObject.Find("SimpleRotaryPhone").GetComponent<PhoneCall>().call = PhoneCall.Call.Done;
+            if (GameObject.FindGameObjectWithTag("Phone")) {
+                GameObject.FindGameObjectWithTag("Phone").GetComponent<PhoneCall>().call = PhoneCall.Call.Done;
+            } 
         }
         if (checkedvase)
         {
