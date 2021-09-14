@@ -159,14 +159,21 @@ public class GameManager : MonoBehaviour
         {
             if (lastime && destroyCassetteNumber == 5)
             {
-                GameObject.Find("SpiderHopps").SetActive(true);
-                lastime = false;
+                if (GameObject.FindGameObjectWithTag("SpiderHopps"))
+                {
+                    GameObject.FindGameObjectWithTag("SpiderHopps").SetActive(true);
+                    int i = currentSceneint;
+                } 
+                if (PrevSceneint != 3)
+                {
+                    lastime = false;
+                }
             }
             else
             {
-                if (GameObject.Find("SpiderHopps"))
+                if (GameObject.FindGameObjectWithTag("SpiderHopps"))
                 {
-                    GameObject.Find("SpiderHopps").SetActive(false);
+                    GameObject.FindGameObjectWithTag("SpiderHopps").SetActive(false);
                 }
             }
         }
