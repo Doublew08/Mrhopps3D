@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 jumpdire = Vector3.zero;
     StaminaScript PlayerStamina;
     Vector3 PlayerPos;
+    public bool IsMoving=true;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +38,11 @@ public class PlayerMovement : MonoBehaviour
         if (Player.transform.position != PlayerPos)
         {
             Debug.Log("Player has moved");
+            
         }
         else
         {
+            PlayerStamina.IncreaseTheStamina();
             Debug.Log("Player has not moved");
         }
         PlayerPos = Player.transform.position;

@@ -22,11 +22,11 @@ public class StaminaScript : MonoBehaviour
     void Update()
     {
         //Make sure if Stamina is less than the MaxStamina
-        if (Stamina < MaxStamina)
+       /* if (Stamina < MaxStamina&&Player.IsMoving)
         {
             //then increase the stamina
             IncreaseTheStamina();
-        }
+        }*/
     }
     //This method to decrease the stamina
     public void DecreaseInStamina(float amount)
@@ -45,7 +45,7 @@ public class StaminaScript : MonoBehaviour
         }
     }
     //this method to increase the stamina
-    void IncreaseTheStamina()
+   public void IncreaseTheStamina()
     {
         //increse the stamina by time multiplied in 4 
         Stamina = Stamina +Time.deltaTime*4 ;
