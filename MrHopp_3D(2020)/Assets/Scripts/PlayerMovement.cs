@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             move();
         }
-        if (Player.transform.position != PlayerPos)
+        if (transform.position != PlayerPos)
         {
             Debug.Log("Player has moved");
         }
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Player has not moved");
         }
-        PlayerPos = Player.transform.position;
+        PlayerPos = transform.position;
     }
 
     void move()
