@@ -1324,6 +1324,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 609097226}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &467415113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467415112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8a98251d5534c4fa5f4982c9b50825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Place1: {fileID: 657050961}
+  Place2: {fileID: 414125971}
+  Head: {fileID: 1326242463}
+  Eyes: {fileID: 878869247}
 --- !u!1 &470659831 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4492170996570838912, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
