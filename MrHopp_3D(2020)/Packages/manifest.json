@@ -6,6 +6,8 @@
     "com.unity.ide.vscode": "1.2.3",
     "com.unity.postprocessing": "2.3.0",
     "com.unity.probuilder": "4.2.3",
+    "com.unity.scriptablebuildpipeline": "1.7.3",
+    "com.unity.shadergraph": "7.3.1",
     "com.unity.test-framework": "1.1.19",
     "com.unity.textmeshpro": "2.1.6",
     "com.unity.timeline": "1.4.4",

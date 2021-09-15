@@ -25,7 +25,10 @@ public class GameTester : MonoBehaviour
         Rabbit = GameObject.FindGameObjectWithTag("Rabbit");
         if (NoRabbit)
         {
-            Rabbit.SetActive(false);
+            if (Rabbit)
+            {
+                Rabbit.SetActive(false);
+            }
             NoRabbit = false;
         }
 
