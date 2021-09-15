@@ -23,10 +23,7 @@ public class WayPoints : MonoBehaviour
     public  float movementSpeed = 15.0f;
     public float LookR=121;
     public bool CanMove =false;
-    public GameObject Place1;
-    public GameObject Place2;
-    public GameObject Head;
-    public GameObject Eyes;
+   
     
     void Start()
     {
@@ -34,7 +31,7 @@ public class WayPoints : MonoBehaviour
         targetWaypoint = waypoints[targetWaypointIndex];
         RabbitAnimator = GetComponent<Animator>();        
         place1 = FindObjectOfType<RabbitPlace1>();
-        
+       
        
     }
 
@@ -42,10 +39,10 @@ public class WayPoints : MonoBehaviour
     void Update()
     {
 
-
+        
         /*if (CanMove==true)
        // {*/
-            float movementStep = movementSpeed * Time.deltaTime;
+        float movementStep = movementSpeed * Time.deltaTime;
             float rotationStep = rotationSpeed * Time.deltaTime;
            //Rotate The Rabbit When he reach place 2
             Vector3 directionToTarget = targetWaypoint.position - transform.position;
@@ -61,20 +58,8 @@ public class WayPoints : MonoBehaviour
             RabbitAnimator.SetFloat("Walk", 0.2F);
            
 
-           //Check if Rabbit reach Palce1
-           if (Vector3.Distance(transform.position, Place1.transform.position) <= 0)
-           {
-             Debug.Log("Place1");
-             Head.transform.Rotate(0f, 180f, 0f);
-            
-           }
-           //Check if Rabbit reach place2
-           if (Vector3.Distance(transform.position, Place2.transform.position) <= 0)
-           {
-             Debug.Log("Place2");
-             Head.transform.Rotate(0f, -180f, 0f);
+           
           
-           }
         //}                          
     }
 
