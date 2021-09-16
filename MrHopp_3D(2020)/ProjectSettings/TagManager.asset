@@ -16,6 +16,8 @@ TagManager:
   - Place2
   - SpiderHopps
   - Phone
+  - Bear
+  - Plush
   layers:
   - Default
   - TransparentFX
