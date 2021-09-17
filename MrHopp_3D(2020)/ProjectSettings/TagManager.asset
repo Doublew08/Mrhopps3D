@@ -18,6 +18,10 @@ TagManager:
   - Phone
   - Bear
   - Plush
+  - Bedcanend
+  - Warning
+  - Bed
+  - Toy
   layers:
   - Default
   - TransparentFX
@@ -27,7 +31,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - pp
   - 
   - 
   - 
