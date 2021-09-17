@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class fstnumbersafe : MonoBehaviour
 {
-    public Text[] SafeNums;
+   /* public Text[] SafeNums;
     public GameObject[] Buttons;
     // Start is called before the first frame update
     void Start()
@@ -35,5 +35,5 @@ public class fstnumbersafe : MonoBehaviour
         {
 
         }
-    }
+    }*/
 }
