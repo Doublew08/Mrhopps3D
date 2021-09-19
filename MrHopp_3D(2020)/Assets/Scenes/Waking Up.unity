@@ -398,7 +398,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 305269491}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 256
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -1811,7 +1811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247526418}
   - component: {fileID: 1247526417}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: PostProcessing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3899,7 +3899,7 @@ PrefabInstance:
     - target: {fileID: 1167185437306327890, guid: d8f983f14f1a4ea40b08d6ade05a5333,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1167185437306327890, guid: d8f983f14f1a4ea40b08d6ade05a5333,
         type: 3}

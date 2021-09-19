@@ -122,6 +122,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &25868918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1018247644170662884, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 969137418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &25868919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25868918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac20603b1b930644a4ca579bdbba609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Place1: {fileID: 584318112}
+  Place2: {fileID: 1382170147}
+  Head: {fileID: 969137419}
 --- !u!1 &30414674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584318112}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 718.9064, y: 92.76731, z: 79.400406}
+  m_LocalPosition: {x: 729.3, y: 92.76731, z: 79.400406}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 2015661570}
@@ -2782,6 +2803,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5838184750666565391, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6640708496078507467, guid: 4c78d75a34a62a242b2fcaf33a7624c8,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2797,7 +2823,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5838184750666565391, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c78d75a34a62a242b2fcaf33a7624c8, type: 3}
 --- !u!1 &969137419 stripped
 GameObject:
@@ -3640,7 +3667,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382170147}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3688,7 +3715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382170147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 438.50635, y: 92.6973, z: 79.400406}
+  m_LocalPosition: {x: 426.5, y: 92.6973, z: 79.400406}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 2015661570}
