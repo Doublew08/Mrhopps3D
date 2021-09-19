@@ -10,30 +10,71 @@ public class fstnumbersafe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Text i in SafeNums)
+        foreach (Text text in SafeNums)
         {
-            i.text = "0";
+            text.text = "0";
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    void IncreaseButton()
+   public void ChangeValButton()
     {
         int N = int.Parse(gameObject.name);
-        if(N%2 == 0)
-        {
-            if (N == 1)
+        //for (int i = 0; i < 8; i++)
+        
+            if (N % 2 == 0)
             {
-                SafeNums[0].name 
+                if (N == 0)
+                {
+                Debug.Log("Increase 1st 1 ");
+                    int number = int.Parse(SafeNums[N].text) + 1;
+                    SafeNums[N].text = number.ToString();
+                }
+            if (N == 2)
+            {
+                int number = int.Parse(SafeNums[N].text) + 1;
+                SafeNums[N].text = number.ToString();
             }
-        }
-        else
-        {
+            if (N == 4)
+            {
+                int number = int.Parse(SafeNums[N].text) + 1;
+                SafeNums[N].text = number.ToString();
+            }
+            if (N == 6)
+            {
+                int number = int.Parse(SafeNums[N].text) + 1;
+                SafeNums[N].text = number.ToString();
+            }
 
         }
+            else
+            {
+            if (N == 1)
+            {
+                int number = int.Parse(SafeNums[N].text) - 1;
+                SafeNums[N].text = number.ToString();
+            }
+            if (N == 3)
+            {
+                int number = int.Parse(SafeNums[N].text) - 1;
+                SafeNums[N].text = number.ToString();
+            }
+            if (N == 5)
+            {
+                int number = int.Parse(SafeNums[N].text) - 1;
+                SafeNums[N].text = number.ToString();
+            }
+            if (N == 7)
+            {
+                int number = int.Parse(SafeNums[N].text) - 1;
+                SafeNums[N].text = number.ToString();
+            }
+
+        }
+        }
     }
-}
+
