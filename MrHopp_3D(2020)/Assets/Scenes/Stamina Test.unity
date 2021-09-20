@@ -515,6 +515,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7481646539988898361, guid: 71891712003f9614eb2e943f51d1abbb,
+        type: 3}
+      propertyPath: nums.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481646539988898361, guid: 71891712003f9614eb2e943f51d1abbb,
+        type: 3}
+      propertyPath: nums.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8763707743565476898, guid: 71891712003f9614eb2e943f51d1abbb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

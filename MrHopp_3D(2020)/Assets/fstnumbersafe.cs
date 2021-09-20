@@ -8,6 +8,8 @@ public class fstnumbersafe : MonoBehaviour
     public Text[] SafeNums;
     //public GameObject[] Buttons;
     public Button[] buttons;
+    [Range(0,9)]
+    public int[] nums;
     
     // Start is called before the first frame update
     void Start()
@@ -43,51 +45,72 @@ public class fstnumbersafe : MonoBehaviour
         {
             if (N == 0)
             {
-                Debug.Log("Increase 1st 1 ");
-                int number = int.Parse(SafeNums[N].text) + 1;
-                SafeNums[N].text = number.ToString();
+                if (nums[0] < 9)
+                {
+                    Debug.Log("Increase 1st 1 ");
+                    nums[0] = int.Parse(SafeNums[N].text) + 1;
+                    SafeNums[N].text = nums[0].ToString();
+                }
             }
             if (N == 2)
             {
-                int number = int.Parse(SafeNums[1].text) + 1;
-                SafeNums[1].text = number.ToString();
+                if (nums[1] < 9)
+                {
+                    nums[1] = int.Parse(SafeNums[1].text) + 1;
+                    SafeNums[1].text = nums[1].ToString();
+                }
             }
             if (N == 4)
             {
-                int number = int.Parse(SafeNums[2].text) + 1;
-                SafeNums[2].text = number.ToString();
+                if (nums[2] < 9)
+                {
+                    nums[2] = int.Parse(SafeNums[2].text) + 1;
+                    SafeNums[2].text = nums[2].ToString();
+                }
             }
             if (N == 6)
             {
-                
-                int number = int.Parse(SafeNums[3].text) + 1;
-                SafeNums[3].text = number.ToString();
+                if ( nums[3] < 9)
+                {
+                    nums[3] = int.Parse(SafeNums[3].text) + 1;
+                    SafeNums[3].text = nums[3].ToString();
+                }
             }
-
         }
         else
         {
             if (N == 1)
             {
-                int number = int.Parse(SafeNums[0].text) - 1;
-                SafeNums[0].text = number.ToString();
+                if (nums[0] > 0)
+                {
+                    nums[0] = int.Parse(SafeNums[0].text) - 1;
+                    SafeNums[0].text = nums[0].ToString();
+                }
             }
             if (N == 3)
             {
-                int number = int.Parse(SafeNums[1].text) - 1;
-                SafeNums[1].text = number.ToString();
+                if (nums[1] > 0)
+                {
+                    nums[1] = int.Parse(SafeNums[1].text) - 1;
+                    SafeNums[1].text = nums[1].ToString();
+                }
             }
             if (N == 5)
             {
-                int number = int.Parse(SafeNums[2].text) - 1;
-                SafeNums[2].text = number.ToString();
+                if (nums[2] > 0)
+                {
+                    nums[2] = int.Parse(SafeNums[2].text) - 1;
+                    SafeNums[2].text = nums[2].ToString();
+                }
             }
             if (N == 7)
             {
-                int number = int.Parse(SafeNums[3].text) - 1;
-                SafeNums[3].text = number.ToString();
+                if (nums[3] > 0)
+                {
+                    nums[3] = int.Parse(SafeNums[3].text) - 1;
+                    SafeNums[3].text = nums[3].ToString();
+                }
             }
-
         }
         // Debug.Log("You have clicked the button #" + buttonIndex, buttons[buttonIndex]);
     }
