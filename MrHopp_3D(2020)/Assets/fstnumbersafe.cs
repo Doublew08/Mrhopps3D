@@ -112,6 +112,10 @@ public class fstnumbersafe : MonoBehaviour
                 }
             }
         }
+        if(nums[0] == 1&& nums[1] == 8 && nums[2] == 0 && nums[3] == 4)
+        {
+            
+        }
         // Debug.Log("You have clicked the button #" + buttonIndex, buttons[buttonIndex]);
     }
 }
