@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OpenDoorScript : MonoBehaviour
 {
-    [SerializeField] private bool OpenWay;
+    public  bool OpenWay;
     [SerializeField] private float OpenSpeed;
 
     private bool IsOpen;

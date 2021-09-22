@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class MayOpenSafe : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class MayOpenSafe : MonoBehaviour
     public float End_door;
     public GameObject SafePuzzle;
     public bool seeingPuzzle;
-    public GameObject door;
+   // public GameObject door;
+    public GameManager gameManager;
+   // public OpenDoorScript door;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,23 +26,31 @@ public class MayOpenSafe : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             GameObject Player = GameObject.FindGameObjectWithTag("Player");
-
-            GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            if (GameObject.FindGameObjectWithTag("GameManager"))
+            {
+                 gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            }
             if (beg_door < Player.transform.position.z && Player.transform.position.z < End_door)
             {
                 Hand.SetActive(true);
                 if (Input.GetKey(KeyCode.E) && gameManager.HaveEndKey)
                 {
+                    Cursor.lockState = CursorLockMode.None;
+                    gameObject.GetComponent<OpenDoorScript>().OpenWay = true;
                     Player.GetComponent<PlayerMovement>().canmove = false;
                     SafePuzzle.SetActive(true);
                     print("destroyed");
                     Destroy(GameObject.Find("Canvas(EndKey)(Clone)"));
                     seeingPuzzle = true;
-                    door.SetActive(false);
+                    
                 }
                 if(seeingPuzzle && Input.GetKey(KeyCode.Q))
                 {
-                    door.SetActive(true);
+                    Cursor.lockState = CursorLockMode.Locked;
+
+                    //door.SetActive(true);
+                    gameObject.GetComponent<OpenDoorScript>().OpenWay = false;
+
                     Player.GetComponent<PlayerMovement>().canmove = true;
 
                     seeingPuzzle = false;
