@@ -32,7 +32,7 @@ public class StaminaScript : MonoBehaviour
     public void DecreaseInStamina(float amount)
     {
         //Decrese the double amount
-        Stamina = Stamina - amount*2;
+        Stamina = Stamina - amount*1.5f;
         //and decrease the value of stamina in the inspector
         StaminaSlider.value = Stamina;
         //check if the stamina is less than 0
@@ -48,7 +48,7 @@ public class StaminaScript : MonoBehaviour
    public void IncreaseTheStamina()
     {
         //increse the stamina by time multiplied in 4 
-        Stamina = Stamina +Time.deltaTime*4 ;
-        StaminaSlider.value = StaminaSlider.value + Time.deltaTime * 4;
+        Stamina = Stamina +Time.deltaTime*7 ;
+        StaminaSlider.value = StaminaSlider.value + Time.deltaTime * 7;
     }
 }

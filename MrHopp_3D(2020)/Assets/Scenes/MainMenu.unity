@@ -317,6 +317,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 787648582}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &267702268
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267702267}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1879d647b76a325489ea955377fe013a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &339449463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1135,6 +1154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Plush
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 56ec665661dc69849825712a4ff0c7f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1382332395967909793, guid: 56ec665661dc69849825712a4ff0c7f3,
         type: 3}
@@ -2029,7 +2053,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
   m_Intensity: 120
   m_Range: 20
   m_SpotAngle: 53.216213
@@ -2105,7 +2129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2cb629ecc339ed44b294ad6b1aa266e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plush: {fileID: 267702267}
+  Rabiit: {fileID: 267702267}
 --- !u!1 &1150158454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3463,7 +3487,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135613799}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2135613801
 Camera:
   m_ObjectHideFlags: 0
