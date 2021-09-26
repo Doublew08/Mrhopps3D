@@ -35,17 +35,22 @@ public class PlayerMovement : MonoBehaviour
         {
             move();
         }
-        if (transform.position != PlayerPos)
+        if (PlayerStamina.Stamina < 100f)
         {
-            Debug.Log("Player has moved");
-            
-        }
-        else
-        {
-            PlayerStamina.IncreaseTheStamina();
-            Debug.Log("Player has not moved");
+            if (transform.position != PlayerPos)
+            {
+                Debug.Log("Player has moved");
+
+            }
+            else
+            {
+                PlayerStamina.IncreaseTheStamina();
+                Debug.Log("Player has not moved");
+            }
+           
         }
         PlayerPos = transform.position;
+
     }
 
     void move()

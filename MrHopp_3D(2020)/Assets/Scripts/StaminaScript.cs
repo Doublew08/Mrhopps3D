@@ -21,18 +21,13 @@ public class StaminaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Make sure if Stamina is less than the MaxStamina
-       /* if (Stamina < MaxStamina&&Player.IsMoving)
-        {
-            //then increase the stamina
-            IncreaseTheStamina();
-        }*/
+       
     }
     //This method to decrease the stamina
     public void DecreaseInStamina(float amount)
     {
         //Decrese the double amount
-        Stamina = Stamina - amount*1.5f;
+        Stamina = Stamina - amount*2;
         //and decrease the value of stamina in the inspector
         StaminaSlider.value = Stamina;
         //check if the stamina is less than 0
@@ -45,10 +40,11 @@ public class StaminaScript : MonoBehaviour
         }
     }
     //this method to increase the stamina
-   public void IncreaseTheStamina()
+    public void IncreaseTheStamina()
     {
         //increse the stamina by time multiplied in 4 
-        Stamina = Stamina +Time.deltaTime*7 ;
-        StaminaSlider.value = StaminaSlider.value + Time.deltaTime * 7;
+        Stamina = Stamina + Time.deltaTime * 4;
+        StaminaSlider.value = StaminaSlider.value + Time.deltaTime * 4;
+       
     }
 }

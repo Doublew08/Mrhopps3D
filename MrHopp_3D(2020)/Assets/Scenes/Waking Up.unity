@@ -3740,7 +3740,7 @@ PrefabInstance:
     - target: {fileID: 1167185438169322820, guid: d8f983f14f1a4ea40b08d6ade05a5333,
         type: 3}
       propertyPath: IsMoving
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1167185438169322820, guid: d8f983f14f1a4ea40b08d6ade05a5333,
         type: 3}
@@ -4028,6 +4028,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585554867692032945, guid: 00c832d6164369f45b7935a36990613c,
+        type: 3}
+      propertyPath: m_Value
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4585554867692032951, guid: 00c832d6164369f45b7935a36990613c,
         type: 3}
