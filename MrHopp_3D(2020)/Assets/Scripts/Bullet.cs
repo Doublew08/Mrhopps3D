@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    Rigidbody Clone;
-    public Rigidbody BulletPrefab;
+    //private 
+    private int MaxAmmo = 10;
     private float NextBullet;
-    public float FireRate;
+    Rigidbody Clone;
+    private AudioSource Audio;
+    private WraponReload reload;
+
+    //public
+    public Rigidbody BulletPrefab;
     public Transform SpawnPoint;
     public float BulletSpeed;
     public int Ammo;
-    private int MaxAmmo = 10;
     public bool IsFiring;
     public Animator PlayerAnimator;
+    public float FireRate;
+
 
     // Start is called before the first frame update
     void Start()
     {
         Ammo = MaxAmmo;
+        Audio = GetComponent<AudioSource>();
+        reload = FindObjectOfType<WraponReload>();
     }
 
     // Update is called once per frame
@@ -30,6 +38,8 @@ public class Bullet : MonoBehaviour
             //this if statement to make player shoot single single
             if (Time.time > NextBullet)
             {
+                //Run the audio 
+                Audio.Play();
                 //Run the Animtion of shoot
                 PlayerAnimator.SetBool("Shoot", true);
                 Debug.Log("Shooting");
@@ -42,7 +52,7 @@ public class Bullet : MonoBehaviour
                 Destroy(Clone.gameObject, 3);
                 //make isfiring true
                 IsFiring = true;
-                //decrease the ammo
+               
                 Ammo--;
                 //make isfiring false
                 IsFiring = false;
@@ -68,6 +78,7 @@ public class Bullet : MonoBehaviour
             {
                 //Start the coroutine
                 StartCoroutine(Reload());
+                reload.Reload();
             }
             Debug.Log("You Cant Shoot Now ");
         }
