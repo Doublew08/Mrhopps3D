@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
     public bool IsFiring;
     public Animator PlayerAnimator;
     public float FireRate;
+    public ParticleSystem muzzleflash;
 
 
     // Start is called before the first frame update
@@ -52,7 +53,8 @@ public class Bullet : MonoBehaviour
                 Destroy(Clone.gameObject, 3);
                 //make isfiring true
                 IsFiring = true;
-               
+                muzzleflash.Play();
+                    
                 Ammo--;
                 //make isfiring false
                 IsFiring = false;
